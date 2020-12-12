@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title>0.绪论</title>
-    <link href="/static_blog/2020/12/11/0-%E7%BB%AA%E8%AE%BA/"/>
-    <url>/static_blog/2020/12/11/0-%E7%BB%AA%E8%AE%BA/</url>
-    
-    <content type="html"><![CDATA[<p>​     **数据(data)**是对客观事物的符号表示。在计算机科学中是指所有能输入到计算机中并被计算机程序处理的符号的总称。</p><p>​     **数据元素(data element)**是数据的<u>基本单位</u>，在计算机程序中通常作为一个整体进行考虑和处理。</p><p>​     **数据项(Data Item)**数据项是数据的不可分割的<u>最小单位</u>。</p><p>​     **数据对象(data object)**是性质相同的数据元素的<u>集合</u>，是数据的一个子集。</p><p><img src="C:\Users\napia\AppData\Roaming\Typora\typora-user-images\image-20201211202432975.png" alt="image-20201211202432975"></p><p>​     <strong>如图: 数据对象由若干数据元素组成，数据元素由若干数据项组成</strong></p><p>​     **数据结构(data structure)**又称逻辑结构，是相互之间存在一种或多种特定关系的数据元素的集合。通常有以下四类基本结构：<u>集合</u>、<u>线性结构</u>、<u>树形结构</u>、<u>图状结构</u>。</p><p>​     <strong>存储结构（物理结构）</strong>是数据结构在计算机中的表示（又称映像）。表示数据元素之间的关联方式有:  <u>顺序存储方式</u>、<u>链式存储方式</u>、索引存储方式、散列存储方式</p><p>​     **数据类型(data type)**是一个值的集合和定义在这个值集上的一组操作的总称。</p><p>​     **抽象数据类型(AbstractData Type)**是指一个数学模型以及定义在该模型上的一组操作，可细分为：原子类型、固定聚合类型、可变聚合类型。</p><p>​     评价<strong>算法的好坏</strong>有四个方面的因素: <u>1.正确性</u> <u>2.易读性</u> <u>3.健壮性</u> <u>4.时空性</u></p><p>​     <strong>时间复杂度</strong>的计算: 找出基本操作, 估算算法的计算量</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Hello World</title>
     <link href="/static_blog/2020/12/10/Hello-World/"/>
     <url>/static_blog/2020/12/10/Hello-World/</url>

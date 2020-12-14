@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>4_二叉树理论</title>
+    <link href="/2020/12/14/4-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%90%86%E8%AE%BA/"/>
+    <url>/2020/12/14/4-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%90%86%E8%AE%BA/</url>
+    
+    <content type="html"><![CDATA[<h3>二叉树</h3><h4>概念：</h4><p>二叉树是n(n≥0)个元素的有限集合，该集合或者为空，或者由一个根及两棵互不相交的左子树和右子树组成，其中左子树和右子树也均为二叉树。二叉树的任一结点都有两棵子树（<code>它们中的任何一个都可以是空子树</code>），并且这两棵子树之间有次序关系，交换位置就成为一棵不同的二叉树。</p><h4>性质:</h4><ul><li><strong>性质1：</strong>二叉树第i (i≥1) 层上至多有2^(i-1)个结点。</li><li><strong>性质2：</strong>深度为k (k≥1) 的二叉树至多有2^(k)-1个结点</li><li><strong>性质3：</strong>对任何一棵二叉树, 如果其叶结点数为n0, 度为2的结点数为 n2,则n0＝n2＋1。</li><li><strong>性质4：</strong>含有n个结点的完全二叉树的深度为 log2(n +1) 或 log2n +1</li><li><strong>性质5：</strong>如果对一棵有n个结点的完全二叉树的结点按<code>层序编号</code>（从第一层到最后一层，每层从左到右），对任一结点i（1≤i≤n）有：<ol><li>如果i=1，则结点i是二叉树的根，无双亲；如果i&gt;1，则其双亲编号为 ⌊ i/2 ⌋ 。</li><li>如果2i&gt;n，则结点i无左右孩子（结点i为叶子结点）；否则其左孩子编号为 2i 。</li><li>如果2i+1&gt;n，则结点i无右孩子；否则右孩子编号为 2i+1 。</li></ol></li></ul><h4>特殊二叉树:</h4><p><strong>1.斜树: </strong>左斜树 右斜树 结点个数与深度相同</p><p><strong>2.满二叉树: </strong>所有分支结点都存在左子树右子树 非叶子结点度数一定为2 深度为k(k≥1) 有2^(k)-1个结点</p><p><strong>3.完全二叉树: </strong>编号为i的结点与同样深度的满二叉树中编号为i的结点位置完全相同</p><p><img src="https://i.loli.net/2020/12/14/zlpoHNaALK6YGOw.png"></p><p><strong>完全二叉树就是除最后一层外，每一层上的结点数均达到最大值；在最后一层上只缺少右边的若干结点.</strong></p><p><strong>满二叉树一定是完全二叉树 完全二叉树不一定满</strong></p><h4>二叉树的遍历:</h4><ul><li>先序NLR</li><li>中序LNR</li><li>后序LRN</li></ul><p><img src="https://i.loli.net/2020/12/14/rHIfCwJyQzclnmp.png" alt="example"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>3_队列</title>
     <link href="/2020/12/14/3-%E9%98%9F%E5%88%97/"/>
     <url>/2020/12/14/3-%E9%98%9F%E5%88%97/</url>

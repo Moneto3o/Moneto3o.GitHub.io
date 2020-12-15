@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Scarlett_D">
   <meta name="keywords" content="">
-  <title>4_二叉树理论 - Moneto3o</title>
+  <title>7_Huffman树及算法 - Moneto3o</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="4_二叉树理论">
+            <span class="h2" id="subtitle" title="7_Huffman树及算法">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-14 22:14" pubdate>
-        December 14, 2020 pm
+      <time datetime="2020-12-15 08:49" pubdate>
+        December 15, 2020 am
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      547 字
+      253 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      2
        分钟
     </span>
   
@@ -224,50 +224,24 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">4_二叉树理论</h1>
+            <h1 style="display: none">7_Huffman树及算法</h1>
             
             <div class="markdown-body">
-              <h3>二叉树</h3>
+              <h3>哈夫曼树与哈夫曼算法</h3>
 
-<h4>概念：</h4>
+<p><strong>哈夫曼树不唯一、时刻考虑权值最小</strong></p>
+<p><strong>路径: </strong>从一个结点到另一个结点的分支序列</p>
+<p><strong>路径长度:  </strong>根结点到L层结点路径长度L-1 (完全二叉树是总路径长度最短的二叉树)</p>
+<h4>Huffman树: </h4>
 
-<p>二叉树是n(n≥0)个元素的有限集合，该集合或者为空，或者由一个根及两棵互不相交的左子树和右子树组成，其中左子树和右子树也均为二叉树。二叉树的任一结点都有两棵子树（<code>它们中的任何一个都可以是空子树</code>），并且这两棵子树之间有次序关系，交换位置就成为一棵不同的二叉树。</p>
-<h4>性质:</h4>
+<p>由n个带权值的叶结点构成的二叉树中,树的最大带权长度(WPL)最小的二叉树称为最优二叉树</p>
+<p><img src="https://i.loli.net/2020/12/15/hWX4R9MKypGocqS.png" srcset="/img/loading.gif" alt="example"></p>
+<p><img src="https://i.loli.net/2020/12/15/jVy6DCFdxcSOANl.gif" srcset="/img/loading.gif"></p>
+<h4>huffman编码</h4>
 
-<ul>
-<li><strong>性质1：</strong>二叉树第i (i≥1) 层上至多有2^(i-1)个结点。</li>
-<li><strong>性质2：</strong>深度为k (k≥1) 的二叉树至多有2^(k)-1个结点</li>
-<li><strong>性质3：</strong>对任何一棵二叉树, 如果其叶结点数为n0, 度为2的结点数为 n2,则n0＝n2＋1。</li>
-<li><strong>性质4：</strong>含有n个结点的完全二叉树的深度为 log2(n +1) 或 log2n +1</li>
-<li><strong>性质5：</strong>如果对一棵有n个结点的完全二叉树的结点按<code>层序编号</code>（从第一层到最后一层，每层从左到右），对任一结点i（1≤i≤n）有：<ol>
-<li>如果i=1，则结点i是二叉树的根，无双亲；如果i&gt;1，则其双亲编号为 ⌊ i/2 ⌋ 。</li>
-<li>如果2i&gt;n，则结点i无左右孩子（结点i为叶子结点）；否则其左孩子编号为 2i 。</li>
-<li>如果2i+1&gt;n，则结点i无右孩子；否则右孩子编号为 2i+1 。</li>
-</ol>
-</li>
-</ul>
-<h4>特殊二叉树:</h4>
-
-<p><strong>1.斜树: </strong>左斜树 右斜树 结点个数与深度相同</p>
-<p><strong>2.满二叉树: </strong>所有分支结点都存在左子树右子树 非叶子结点度数一定为2 深度为k(k≥1) 有2^(k)-1个结点</p>
-<p><strong>3.完全二叉树: </strong>编号为i的结点与同样深度的满二叉树中编号为i的结点位置完全相同</p>
-<p><img src="https://i.loli.net/2020/12/14/zlpoHNaALK6YGOw.png" srcset="/img/loading.gif"></p>
-<p><strong>完全二叉树就是除最后一层外，每一层上的结点数均达到最大值；在最后一层上只缺少右边的若干结点.</strong></p>
-<p><strong>满二叉树一定是完全二叉树 完全二叉树不一定满</strong></p>
-<h4>二叉树的遍历:</h4>
-
-<ul>
-<li><p>先序NLR</p>
-<p><img src="https://i.loli.net/2020/12/15/ESZFVAXh7GsyHB6.gif" srcset="/img/loading.gif" alt="先序"></p>
-</li>
-<li><p>中序LNR</p>
-<p><img src="https://i.loli.net/2020/12/15/87S3i1rXVcsvxK4.gif" srcset="/img/loading.gif" alt="中序"></p>
-</li>
-<li><p>后序LRN</p>
-<p><img src="https://i.loli.net/2020/12/15/6X8MJ1DjoF5TKAv.gif" srcset="/img/loading.gif" alt="后序"></p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2020/12/14/rHIfCwJyQzclnmp.png" srcset="/img/loading.gif" alt="example"></p>
+<p>例题: 设某通讯系统中一个待传输的文本有6个不同字符，它们的出现频率分别是0.5,0.8,1.4,2.2,2.3,2.8，试设计哈夫曼编码</p>
+<p><img src="https://i.loli.net/2020/12/15/A6p9vIMjdKyXUm8.png" srcset="/img/loading.gif"></p>
+<p>出现频率为0.5的字符编码为1000 出现频率为0.8的字符编码为1001 出现频率为1.4的字符编码为101 出现频率为2.2的字符编码为00 出现频率为2.3的字符编码为01 出现频率为2.8的字符编码为11</p>
 
             </div>
             <hr>
@@ -284,18 +258,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/12/15/5-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%AE%97%E6%B3%95/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">5_二叉树算法</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/12/14/3-%E9%98%9F%E5%88%97/">
-                        <span class="hidden-mobile">3_队列</span>
+                      <a href="/2020/12/15/6-%E6%A0%91%E5%92%8C%E6%A3%AE%E6%9E%97/">
+                        <span class="hidden-mobile">6_树和森林</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

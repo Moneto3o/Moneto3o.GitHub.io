@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Scarlett_D">
   <meta name="keywords" content="">
-  <title>10_排序 - Moneto3o</title>
+  <title>chap2线性结构复习题 - Moneto3o</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="10_排序">
+            <span class="h2" id="subtitle" title="chap2线性结构复习题">
               
             </span>
 
@@ -172,7 +172,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-22 15:00" pubdate>
+      <time datetime="2020-12-22 18:16" pubdate>
         December 22, 2020 pm
       </time>
     </span>
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      205 字
+      1.7k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      17
        分钟
     </span>
   
@@ -224,49 +224,128 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">10_排序</h1>
+            <h1 style="display: none">chap2线性结构复习题</h1>
             
             <div class="markdown-body">
-              <h4>插入排序</h4>
+              <h4>一、选择题</h4>
 
-<ul>
-<li><p>直接插入排序 <code>就是选择第一个元素之后，在从后面选择小的，往前插</code></p>
-<p><img src="https://pic3.zhimg.com/v2-91b76e8e4dab9b0cad9a017d7dd431e2_b.webp" srcset="/img/loading.gif"></p>
+<ol>
+<li><p>顺序存储结构的优点是（<strong>存储密度大</strong>）</p>
 </li>
-<li><p>折半插入排序</p>
+<li><p>下面关于线性表的叙述中，<u>错误</u>的是（线性表采用顺序存储，便于进行插入和删除操作）</p>
 </li>
-<li><p>表插入排序</p>
+<li><p>线性表是具有n个（<strong>数据元素</strong>）的有限序列（n&gt;0）。</p>
 </li>
-<li><p>希尔排序</p>
+<li><p>若某线性表最常用的操作是存取任一<u>指定序号</u>的元素和在线性表的最后进行插入和删除元素，则利用（<strong>顺序表</strong>）存储方式最节省时间。</p>
 </li>
-</ul>
-<h4>冒泡排序</h4>
+<li><p>某线性表中最常用的操作是在<u>最后一个元素之后插入</u>一个元素和<u>删除第一个元素</u>，则采用（<strong>仅有尾指针的单循环链表</strong>）存储方式最节省运算时间。</p>
+</li>
+<li><p>对于一个头指针为head的带头结点的单链表，判定该链表为空表的条件是（<strong>head→next==NULL</strong>）。</p>
+</li>
+<li><p>链表<u>不具有</u>的特点是（可随机访问任一元素） </p>
+</li>
+<li><p>下面的叙述正确的是（<strong>线性表在链式存储时，查找第i个元素的时间同i的值成正比</strong>）</p>
+</li>
+<li><p>对于顺序存储的线性表，访问结点和增加、删除结点的时间复杂度分别为（<strong>O(1)，O(n)</strong>）。</p>
+</li>
+<li><p>非空的循环单链表head的指向尾结点的指针变量p满足（<strong>p-&gt;link=head</strong>）。</p>
+</li>
+<li><p>若长度为n的线性表采用顺序存储结构，在第i个位置插入一个元素的算法的时间复杂度为（<strong>O(n)</strong>）(1&lt;=i&lt;=n+1)。</p>
+</li>
+<li><p>在单链表指针为p的结点之后插入指针为s的结点，正确的操作是（<strong>s-&gt;next=p-&gt;next;  p-&gt;next=s;</strong>）。</p>
+</li>
+<li><p>利用双向链表作线性表的存储结构的优点是（<strong>提高按关系查找数据元素的速度</strong>）。</p>
+</li>
+<li><p>若长度为n的非空顺序表，在表的第i个位置插入一个新元素，i的合法值是（<strong>1≤i≤n+1</strong>）。</p>
+</li>
+<li><p>已知L是带头结点的单链表，则删除首元结点的语句是（<strong>L-&gt;next=L-&gt;next-&gt;next;</strong>）。</p>
+</li>
+<li><p>已知单链表A的长度为m，单链表B的长度为n，若将B链接在A的末尾，在没有尾指针的情况下，算法的时间复杂度为（<strong>O(m)</strong>）。</p>
+</li>
+<li><p>设一个链表最常用的操作是在<u>末尾插入结点和删除尾结点</u>，则选用(<strong>带头结点的双循环链表</strong>)最节省时间。</p>
+</li>
+</ol>
+<h4>二、填空题</h4>
 
-<p><img src="https://pic4.zhimg.com/v2-33a947c71ad62b254cab62e5364d2813_b.webp" srcset="/img/loading.gif"></p>
-<p>每两个挨着比，每趟最大的沉底</p>
-<h4>快速排序</h4>
+<ol>
+<li><p>在一个长度为n的顺序表中第i个元素（1≤i≤n）之前插入一个元素时，需向后移动 <strong><u>n-i+1</u></strong>个元素。</p>
+</li>
+<li><p>当线性表的元素<code>总数基本稳定</code>，且<code>很少进行插入和删除操作</code>，但要求以最快的速度存取线性表中的元素时，应采用 <strong><u>顺序</u></strong> 存储结构。</p>
+</li>
+<li><p>对于一个有n个结点的单链表，在给定值为x的结点后插入一个新结点的时间复杂度为 <strong><u>O(n)</u></strong>。</p>
+</li>
+<li><p>根据链式存储结构中每一个结点包含的指针个数，可以将线性链表分成<strong><u>单链表</u></strong>和多重链表。</p>
+</li>
+<li><p>链接存储的特点是利用<strong><u>指针</u></strong>来表示数据元素之间的逻辑关系。</p>
+</li>
+<li><p>顺序存储结构是通过<strong><u>物理位置相邻</u></strong>表示元素之间的关系的;链式存储结构是通过<strong><u>指针</u></strong>表示元素之间的关系的。</p>
+</li>
+<li><p>循环单链表的最大优点是：<strong><u>从任一结点出发都可访问到链表中每一个元素</u></strong>。</p>
+</li>
+<li><p>带头结点的单循环链表L，L为空表的条件是：<strong><u>L-&gt;next==L</u></strong>。</p>
+</li>
+</ol>
+<h4>三、判断题</h4>
 
-<p><img src="https://pic1.zhimg.com/v2-c411339b79f92499dcb7b5f304c826f4_b.webp" srcset="/img/loading.gif"></p>
-<p>用第一个数字，依次和后面的每个比较，然后拆分成2部分，一部分小于等于，一部分大于，依次类推即可</p>
-<h4>选择排序</h4>
+<ol>
+<li><p>对任何数据结构链式存储结构不是<del>一定优于顺序存储结构</del>。(   )</p>
+</li>
+<li><p>线性表采用链表存储时，结点和结点内部的存储空间不是<del>可以是不连续的</del>。(   )</p>
+</li>
+<li><p>顺序存储方式插入和删除时效率太低，因此它不是<del>不如链式存储方式好</del>。(   )</p>
+</li>
+<li><p>所谓静态链表不是<del>一直不发生变化的链表</del>。类似于数组方法实现的，是顺序的存储结构(   )</p>
+</li>
+<li><p>线性表的特点是不是<del>每个元素都有一个前驱和一个后继</del>。(   )</p>
+</li>
+<li><p>取线性表的第i个元素的时间不一定<del>同i的大小有关</del>。这要分是顺序存储结构还是链式存储结构 (   )</p>
+</li>
+<li><p>线性表不是<del>只能用顺序存储结构实现</del>。(   )</p>
+</li>
+<li><p>顺序存储结构的主要缺点是不利于插入或删除操作。</p>
+</li>
+</ol>
+<h4>四、简答题</h4>
 
-<p><img src="https://pic1.zhimg.com/v2-1c7e20f306ddc02eb4e3a50fa7817ff4_b.webp" srcset="/img/loading.gif"></p>
-<p>每次选择最小的和未排序的第一个元素交换</p>
-<h4>堆排序</h4>
+<ol>
+<li><p>对于线性表中的插入操作，分别写出在顺序存储结构下和链式存储结构下的时间复杂度。</p>
+<p>顺序O(n)  链式O(1)</p>
+</li>
+<li><p>线性结构的特点是什么？</p>
+<p>1．集合中必存在唯一的一个”第一个元素”；</p>
+<p>2．集合中必存在唯一的一个”最后的元素”；</p>
+<p>3．除最后元素之外，其它数据元素均有唯一的”后继”；</p>
+<p>4．除第一元素之外，其它数据元素均有唯一的”前驱”。</p>
+<p>数据元素之间存在着“一对一”的线性关系</p>
+</li>
+<li><p>说明在线性表的链式存储结构中，头指针与头结点之间的根本区别；头结点与首元结点的关系。</p>
+<p><strong>头指针</strong>是指向链表第一个节点的指针。若链表设有头结点，则头指针指向头结点；若链表没有设头结点，则头指针指向首元结点。</p>
+<p><strong>头结点</strong>是在首元结点之前附设的一个节点，其指针域指向首元结点。头结点的数据域可以不存储任何信息，也可以储存与数据类型相同的其他附加信息。</p>
+<p><strong>首元结点</strong>是指链表中存储第一个数据元素的节点。</p>
+<p><img src="https://img2020.cnblogs.com/blog/2031479/202005/2031479-20200519210025364-1093899923.jpg" srcset="/img/loading.gif"></p>
+</li>
+<li><p>在单链表和双向链表中，能否从当前结点出发访问到任何一个结点?</p>
+<p>在单链表中不能从当前结点（若当前结点不是第一结点）出发访问到任何一个结点，<u>链表只能从头指针开始，访问到链表中每个结点</u>。在<u>双链表中</u>求前驱和后继都容易，从<u>当前结点</u>向前到第一结点，向后到最后结点，<u>可以访问到任何一个结点</u>。</p>
+</li>
+<li><p>顺序表在插入或删除元素时一般需要移动元素，如果想不移动多个元素就实现插入和删除，应该如何处理？</p>
+<p>设顺序表长度为n </p>
+<p>插入元素时，直接将新元素插在第n+1个位置</p>
+<p>删除第i个元素时，将第n个元素补到第i个位置</p>
+</li>
+</ol>
 
-<p>最小堆：任一结点的值都不大于它的两个孩子的值 </p>
-<p>最大堆：任一结点的值都不小于它的两个孩子的值</p>
-<p>画出二叉树，然后调整为堆即可</p>
-<h4>归并排序</h4>
-
-<p><img src="https://pic3.zhimg.com/80/v2-145011b5968388bd76e3b91853b136f6_720w.jpg" srcset="/img/loading.gif"></p>
-<p>二二合并排序</p>
-<h4>基数排序</h4>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/DSReviewPaper/">DSReviewPaper</a>
+                    
+                  </div>
                 
               </div>
               
@@ -277,9 +356,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/12/22/chap1%E7%BB%AA%E8%AE%BA%E5%A4%8D%E4%B9%A0%E9%A2%98/">
+                      <a href="/2020/12/22/chap3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E5%A4%8D%E4%B9%A0%E9%A2%98/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">chap1绪论复习题</span>
+                        <span class="hidden-mobile">chap3栈和队列复习题</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -287,8 +366,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/12/22/9-%E6%9F%A5%E6%89%BE/">
-                        <span class="hidden-mobile">9_查找</span>
+                      <a href="/2020/12/22/chap1%E7%BB%AA%E8%AE%BA%E5%A4%8D%E4%B9%A0%E9%A2%98/">
+                        <span class="hidden-mobile">chap1绪论复习题</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

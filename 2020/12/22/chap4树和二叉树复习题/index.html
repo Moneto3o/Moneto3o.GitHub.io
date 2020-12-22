@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Scarlett_D">
   <meta name="keywords" content="">
-  <title>10_排序 - Moneto3o</title>
+  <title>chap4树和二叉树复习题 - Moneto3o</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="10_排序">
+            <span class="h2" id="subtitle" title="chap4树和二叉树复习题">
               
             </span>
 
@@ -172,7 +172,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-22 15:00" pubdate>
+      <time datetime="2020-12-22 18:17" pubdate>
         December 22, 2020 pm
       </time>
     </span>
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      205 字
+      1.8k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      20
        分钟
     </span>
   
@@ -224,49 +224,167 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">10_排序</h1>
+            <h1 style="display: none">chap4树和二叉树复习题</h1>
             
             <div class="markdown-body">
-              <h4>插入排序</h4>
+              <h4>一、选择题</h4>
 
-<ul>
-<li><p>直接插入排序 <code>就是选择第一个元素之后，在从后面选择小的，往前插</code></p>
-<p><img src="https://pic3.zhimg.com/v2-91b76e8e4dab9b0cad9a017d7dd431e2_b.webp" srcset="/img/loading.gif"></p>
+<ol>
+<li><p>不含任何结点的空树（ <strong>是一棵树也是一棵二叉树</strong> ）</p>
 </li>
-<li><p>折半插入排序</p>
+<li><p>一棵有n个结点的树的所有结点的度数之和为（  <strong>n-1</strong> ）<code>特值法 取n=1</code></p>
 </li>
-<li><p>表插入排序</p>
+<li><p>在二叉树中某一个结点的深度为3，高度为4，则该树的高度是（ 6 ）</p>
+<p><code>深度和高度是相对于两个相反方向的 高度是从下往上</code></p>
 </li>
-<li><p>希尔排序</p>
+<li><p>设高度为h的二叉树中只有度为0和度为2的结点，则该树的结点数<strong>至多</strong>为（ <strong>2^h-1</strong> ）</p>
 </li>
-</ul>
-<h4>冒泡排序</h4>
+<li><p>设高度为h的二叉树中只有度为0和度为2的结点，则该树的结点数<strong>至少</strong>为（ <strong>2h-1</strong> ）</p>
+<p><img src="https://i.loli.net/2020/12/20/fsDCwEPT64l1xHq.png" srcset="/img/loading.gif"></p>
+</li>
+<li><p>高度为h的满二叉树中有n个结点，其中有m个叶结点，则正确的等式是（  <strong>n=2h-1</strong> ）</p>
+<p><code>这种题不要只代一组数 容易出错!!</code></p>
+</li>
+<li><p>二叉树是非线性数据结构，所以（ <strong>顺序存储结构和链式存储结构都能存储</strong>  ）</p>
+</li>
+<li><p>一棵完全二叉树有25个叶结点，则该树最少有（ 49 ）个结点  (前5行满(1,2,4,8,16) 第6行有18个叶子)</p>
+</li>
+<li><p>假设一个三叉树的结点数为36，则该树的最小高度为（ 4 ）<code>满树的情况下</code></p>
+</li>
+<li><p>设二叉树有n个结点，则二叉链表中<strong>非空指针</strong>数为（ <strong>n-1</strong> ）</p>
+<p><code>在有N个结点的二叉链表中必定有2N个链域--左右指针</code></p>
+<p><code>除根结点外，其余N-1个结点都有一个父结点</code></p>
+<p><code>所以，一共有N-1个非空链域，其余2N-（N-1）=N+1个为空链域</code></p>
+</li>
+<li><p>先序序列和中序序列正好相反的二叉树是（ <strong>左单枝树</strong> ）</p>
+</li>
+<li><p>后序序列和中序序列正好相反的二叉树是（ <strong>右单枝树</strong> ）</p>
+</li>
+<li><p>把一棵树转换为二叉树后，这棵二叉树的形态是（ <strong>唯一的</strong> ）</p>
+</li>
+<li><p>将一棵树T转换为孩子—兄弟链表表示的二叉树H，则T的后根序遍历是H 的（ <strong>中序遍历</strong> ）</p>
+<img src="http://uploadfiles.nowcoder.com/images/20150905/710976_1441459044912_ACED241801E307EE7A39612F85A94EBF" srcset="/img/loading.gif" style="zoom: 67%;" />
 
-<p><img src="https://pic4.zhimg.com/v2-33a947c71ad62b254cab62e5364d2813_b.webp" srcset="/img/loading.gif"></p>
-<p>每两个挨着比，每趟最大的沉底</p>
-<h4>快速排序</h4>
+<p><code>树转化为二叉树 先序遍历对应二叉树的先序遍历 后序遍历对应二叉树的中序遍历</code></p>
+</li>
+</ol>
+<h4>二、填空题</h4>
 
-<p><img src="https://pic1.zhimg.com/v2-c411339b79f92499dcb7b5f304c826f4_b.webp" srcset="/img/loading.gif"></p>
-<p>用第一个数字，依次和后面的每个比较，然后拆分成2部分，一部分小于等于，一部分大于，依次类推即可</p>
-<h4>选择排序</h4>
+<ol>
+<li><p>在一棵有n个结点的二叉树中，若度为2的结点数为n2，度为1的结点数为n1，度为0的结点数为n0，则该树可能出现的最大高度是 <strong><u>n</u></strong> ，其叶结点数为 <strong><u>1</u></strong>  ，而该树可能出现的最小高度是 <img src="https://i.loli.net/2020/12/20/l5t317YzxavjkAw.png" srcset="/img/loading.gif"> ，其叶结点数为 <strong><u>n2+1</u></strong>  。</p>
+<p><code>最大高度 单枝树    最小高度 满二叉树</code></p>
+</li>
+<li><p>一棵完全二叉树有12个叶结点，则该树最多有  <u>24</u>  个结点。</p>
+<p><code>计算：n0=1 叶子结点是双分支节点数加1 n2=n0-1=11 单分支节点数为1或者0，最多则选择1 n=n0+n2+1=12+11+1=24</code></p>
+</li>
+<li><p>已知二叉树的先序序列为ABDCEF，中序序列为DBAECF，则该树的后序序列为<u>DBEFCA</u></p>
+</li>
+</ol>
+<img src="https://i.loli.net/2020/12/20/UoHlrTGZ4stphwd.jpg" srcset="/img/loading.gif" style="zoom: 12%;" />
 
-<p><img src="https://pic1.zhimg.com/v2-1c7e20f306ddc02eb4e3a50fa7817ff4_b.webp" srcset="/img/loading.gif"></p>
-<p>每次选择最小的和未排序的第一个元素交换</p>
-<h4>堆排序</h4>
+<ol start="4">
+<li><p>二叉树的层次遍历需要使用  <strong><u>队列</u></strong>  辅助才能实现。 </p>
+</li>
+<li><p>设二叉树有n个结点，则二叉链表中<strong>空指针</strong>数为 <strong><u>n+1</u></strong></p>
+</li>
+<li><p>由3个结点所构成的二叉树有  <u>5</u>种形态</p>
+<p><code>h(n)=C(2n,n)/(n+1) (n=1,2,3,...)</code></p>
+</li>
+<li><p>一棵深度为6的满二叉树有 <u> 31</u>  个分支结点和 <u>32</u> 个叶子。</p>
+<p><code>满二叉树没有度为1的结点，分支结点数就是度为2的结点数 即1+2+4+8+16</code> </p>
+</li>
+<li><p>一棵具有257个结点的完全二叉树，它的深度为  <u>9</u>  </p>
+<p><code>含有n个结点的完全二叉树的深度为 log2(n +1) </code></p>
+</li>
+<li><p>设一棵完全二叉树有700个结点，则共有  <u>350</u> 个叶子结点。</p>
+<p><code>完全二叉树n=n0+n2+1 n2=n0-1</code></p>
+</li>
+<li><p>设一棵完全二叉树具有1000个结点，则此完全二叉树有 <u>500</u> 个叶子结点，有 <u>499</u>  个度为2的结点，有  <u>1</u>  个结点只有非空左子树，有 <u>0</u> 个结点只有非空右子树。</p>
+</li>
+<li><p>一棵有n(n&gt;1)个结点的k叉树，可能的最大深度为 <strong><u>n</u></strong> ，可能的最小深度为  <strong><u>2</u></strong>  。</p>
+</li>
+</ol>
+<h4>三、判断题</h4>
 
-<p>最小堆：任一结点的值都不大于它的两个孩子的值 </p>
-<p>最大堆：任一结点的值都不小于它的两个孩子的值</p>
-<p>画出二叉树，然后调整为堆即可</p>
-<h4>归并排序</h4>
+<ol>
+<li><p>满二叉树是完全二叉树</p>
+</li>
+<li><p>二叉树的先序序列和中序序列可以唯一确定此二叉树</p>
+</li>
+<li><p>Huffman树中包括度为0、度为1和<del>度为2</del>的结点 (只有01结点)</p>
+</li>
+<li><p>若二叉树用二叉链表存储，则n个结点的二叉链表中有n-1个非空指针域</p>
+</li>
+<li><p>二叉树中每个结点的两棵子树的高度差不一定<del>等于1</del></p>
+</li>
+<li><p>二叉树中每个结点的两棵子树是有序的 </p>
+</li>
+<li><p>二叉树中每个结点不一定<del>有两棵非空子树或有两棵空子树</del></p>
+</li>
+<li><p>二叉树中所有结点个数是<del>2^(k-1)-1</del>，其中k是树的深度<img src="https://i.loli.net/2020/12/20/ltiqNUTsKXZDkHg.png" srcset="/img/loading.gif"></p>
+</li>
+<li><p>二叉树中所有结点，如果不存在非空左子树，<del>则不存在非空右子树</del><img src="https://i.loli.net/2020/12/20/jmMHcivwAZJxCE3.png" srcset="/img/loading.gif"></p>
+</li>
+<li><p>对于一棵非空二叉树，根结点为第1层，则第i层上最多能有<del>2^i -1个结点</del>  应该是2^(i-1)个</p>
+</li>
+<li><p>用二叉链表法（link-rlink）存储包含n个结点的二叉树，结点的2n个指针区域中有n+1个为空指针</p>
+</li>
+<li><p>具有12个结点的完全二叉树有5个度为2的结点</p>
+</li>
+</ol>
+<h4>四、应用题</h4>
 
-<p><img src="https://pic3.zhimg.com/80/v2-145011b5968388bd76e3b91853b136f6_720w.jpg" srcset="/img/loading.gif"></p>
-<p>二二合并排序</p>
-<h4>基数排序</h4>
+<ol>
+<li><p>在一棵度为4的树中，有20个度为4的结点， 10个度为3的结点， 1个度为2的结点，10个度为1的结点，请计算树中度为0的结点个数。</p>
+<p><strong>任何一棵树中，结点个数比分支个数多一</strong> </p>
+<p>分支个数等于20*4+10 *3+1 *2+10 *1=122 </p>
+<p>所以这棵树一共有123个结点 </p>
+<p>度不为零的结点数目为20+10+1+10=41 </p>
+<p>所以叶子结点也就是度为零的结点个数为123-41=82</p>
+</li>
+<li><p>一棵二叉树有1024个结点，其中有叶子结点465个，计算树中度为2和度为1的结点各有多少个</p>
+<p>因n0=n2+1，所以n2=465-1=464，n1=1024-465-464=95</p>
+</li>
+<li><p>请画出一棵先序序列和中序序列相同的二叉树（注：空树和只有根结点的树除外）</p>
+<p><u>右单枝树</u>的先序序列与中序序列相同</p>
+</li>
+<li><p>已知二叉树的层次遍历序列为ABCDEFG，中序序列为DBFEGAC，请画出该树。</p>
+<p><img src="https://i.loli.net/2020/12/21/1TEGVRBZctfWuIX.gif" srcset="/img/loading.gif"></p>
+</li>
+<li><p>给定如图所示二叉树T，请画出与其对应的中序线索二叉树。</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20170415/5437584_1492271590744_CCC6F71D85A05E24BA5EA3BDC35B34BF" srcset="/img/loading.gif"></p>
+<p>要遵循中序遍历的轨迹来画出每个前驱和后继。</p>
+<p>中序遍历序列：55 40 25 60 28 08 33 54</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs llvm">线索二叉树就是对这个序列中每个数判断其有没有左右子树<br>没有左子树就加前驱<span class="hljs-punctuation">,</span> 没有右子树就加后继 <br>序列中首元素左子树指空 序列中尾元素右子树指空<br>感谢<span class="hljs-keyword">c</span>佬的指导qaq<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://uploadfiles.nowcoder.com/images/20170415/5437584_1492271737042_CFC9E40405E371BC3173FCF74DB8B357" srcset="/img/loading.gif"></p>
+</li>
+<li><p>试写出如图所示的二叉树分别按先序、中序、后序遍历时得到的结点序列。</p>
+<img src="https://i.loli.net/2020/12/21/D2ELYVFybfKS4wk.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<p>​    DLR：A B D F J G K C E H I L M</p>
+<p>​    LDR:  B F J D G K A C H E L I M</p>
+<p>​    LRD：J F K G D B H L M I E C A</p>
+</li>
+<li><p>把如图所示的树转化成二叉树。</p>
+</li>
+</ol>
+<p><img src="https://i.loli.net/2020/12/21/WwD49Aid6gjaYLv.png" srcset="/img/loading.gif"></p>
+<p>​                                             <img src="https://i.loli.net/2020/12/21/4SsVBxGmIFnzC3H.png" srcset="/img/loading.gif"></p>
+<p>​        </p>
+
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/DSReviewPaper/">DSReviewPaper</a>
+                    
+                  </div>
                 
               </div>
               
@@ -277,9 +395,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/12/22/chap1%E7%BB%AA%E8%AE%BA%E5%A4%8D%E4%B9%A0%E9%A2%98/">
+                      <a href="/2020/12/22/chap5%E5%9B%BE%E5%A4%8D%E4%B9%A0%E9%A2%98/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">chap1绪论复习题</span>
+                        <span class="hidden-mobile">chap5图复习题</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -287,8 +405,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/12/22/9-%E6%9F%A5%E6%89%BE/">
-                        <span class="hidden-mobile">9_查找</span>
+                      <a href="/2020/12/22/chap3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E5%A4%8D%E4%B9%A0%E9%A2%98/">
+                        <span class="hidden-mobile">chap3栈和队列复习题</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Scarlett_D">
   <meta name="keywords" content="">
-  <title>10_排序 - Moneto3o</title>
+  <title>chap6查找复习题 - Moneto3o</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="10_排序">
+            <span class="h2" id="subtitle" title="chap6查找复习题">
               
             </span>
 
@@ -172,7 +172,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-22 15:00" pubdate>
+      <time datetime="2020-12-22 18:26" pubdate>
         December 22, 2020 pm
       </time>
     </span>
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      205 字
+      1.8k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      19
        分钟
     </span>
   
@@ -224,49 +224,122 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">10_排序</h1>
+            <h1 style="display: none">chap6查找复习题</h1>
             
             <div class="markdown-body">
-              <h4>插入排序</h4>
+              <h4>一、选择题</h4>
 
-<ul>
-<li><p>直接插入排序 <code>就是选择第一个元素之后，在从后面选择小的，往前插</code></p>
-<p><img src="https://pic3.zhimg.com/v2-91b76e8e4dab9b0cad9a017d7dd431e2_b.webp" srcset="/img/loading.gif"></p>
+<ol>
+<li><p>在表长为ｎ的链表中进行顺序查找，等概率情况下查找成功的ASL为（ <strong>(n+1)/2</strong> ）</p>
 </li>
-<li><p>折半插入排序</p>
+<li><p>折半查找有序表（4，6，10，12，20，30，50，70，88，100），若查找元素58，则它将依次与表中（ <strong>20，70，30，50</strong>  ）比较大小，查找结果是失败</p>
 </li>
-<li><p>表插入排序</p>
+<li><p>对22个记录的有序表作折半查找，查找失败时，至少需要比较（ 4 ）次关键字</p>
+<p><code>其折半查找的判定树深度为 log2(22) + 1=5，且该判定树不是满二叉树，即查找失败时至多比较 5 次，至少比较 4 次</code></p>
 </li>
-<li><p>希尔排序</p>
+<li><p>链表适用于（ <strong>顺序</strong> ）查找</p>
 </li>
-</ul>
-<h4>冒泡排序</h4>
+<li><p>设哈希表长为14，哈希函数是H(key)=key%11，表中已有数据的关键字为15，38，61，84共四个，现要将关键字为49的结点加到表中，用二次探测再散列法解决冲突，则放入的位置是(  9 ) </p>
+<p><code>49%11=5被占用了（5+1^2）%11=6还是被占用了</code></p>
+<p><code>（5-1^2）%11=4被占用了（5+2^2）%11=9未被占用，所以在9的位置放入49</code></p>
+</li>
+<li><p>适用于折半查找的表的存储方式及元素排列要求为( <strong>顺序方式存储，元素有序</strong> )</p>
+</li>
+<li><p>对长度为3的顺序表做顺序查找，若查找第1个元素的概率为1/2.，查找第2个元素的概率为1/3，查找第3个元素的概率为1/6，则成功查找表中任一元素的平均查找长度为（ 5/3 ）</p>
+<p><code>求期望</code></p>
+</li>
+<li><p>一个哈希表中有n个元素，用哈希法进行查找的平均查找长度为（ <strong>O(1)</strong> ）</p>
+</li>
+<li><p>设哈希表的长度为m，采用除留余数法：H(key)=key % p，一般选择p为（ <strong>小于或等于m的最大质数</strong>  ）</p>
+</li>
+<li><p>哈希表的平均查找长度（ <strong>与处理冲突的方法有关而与表的长度无关</strong> ）</p>
+</li>
+</ol>
+<h4>二、填空题</h4>
 
-<p><img src="https://pic4.zhimg.com/v2-33a947c71ad62b254cab62e5364d2813_b.webp" srcset="/img/loading.gif"></p>
-<p>每两个挨着比，每趟最大的沉底</p>
-<h4>快速排序</h4>
+<ol>
+<li><p>在数据的存放<strong>无规律的线性表</strong>中进行检索的最佳方法是 <strong><u>顺序查找</u></strong> </p>
+</li>
+<li><p>折半查找有序表（4，6，12，20，28，38，50，70，88，100），若查找表中元素20，它将依次与表中元素  <u>28，6，12，20</u> 比较大小。</p>
+</li>
+<li><p>线性有序表（a1，a2，a3，…，a256)是从小到大排列的，对一个给定的值k，用二分法检索表中与k相等的元素，在查找不成功的情况下，最多需要检索 <u>8</u> 次。设有100个结点，用二分法查找时，最大比较次数是  <u>7</u></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">100</span>/<span class="hljs-number">2</span>  取<span class="hljs-number">50</span> 一次 <br><span class="hljs-attribute">50</span>/<span class="hljs-number">2</span>  取<span class="hljs-number">25</span> 二次<br><span class="hljs-attribute">25</span>/<span class="hljs-number">2</span>  取<span class="hljs-number">13</span> 三次<br><span class="hljs-attribute">13</span>/<span class="hljs-number">2</span> 取<span class="hljs-number">7</span> 四次<br><span class="hljs-attribute">7</span>/<span class="hljs-number">2</span> 取 <span class="hljs-number">4</span> 五次<br><span class="hljs-attribute">4</span>/<span class="hljs-number">2</span> 取<span class="hljs-number">2</span> 六次<br><span class="hljs-attribute">2</span>再来个二分必出结果  七次<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在各种查找方法中，平均查找长度与记录个数n无关的查找方法是 <strong><u>哈希查找</u></strong></p>
+</li>
+<li><p>哈希法存储的基本思想是由   <strong><u>关键字的值</u></strong> 决定数据的存储地址</p>
+</li>
+<li><p>有一个表长为m的散列表，初始状态为空，现将n（n&lt;m）个不同的关键码插入到散列表中，解决冲突的方法是用线性探测法。如果这n个关键码的散列地址都相同，则探测的总次数是        <u>n(n-1)/2</u> (而任一元素查找次数 ≤n-1)</p>
+<figure class="highlight gml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs gml">插入第一个关键码时，检查<span class="hljs-symbol">x</span>位置，结果为空，直接插入，探测次数为<span class="hljs-number">0</span>；<br>插入第二个关键码时，检查<span class="hljs-symbol">x</span>位置，结果不为空，采用线性探测法，继续探测<span class="hljs-symbol">x</span>+<span class="hljs-number">1</span>位置，结果为空，插入，探测次数为<span class="hljs-number">1</span>；<br>……<br>插入第n个关键码时，<span class="hljs-symbol">x</span>位置不为空，从<span class="hljs-symbol">x</span>+<span class="hljs-number">1</span>位置开始探测，直至探测到<span class="hljs-symbol">x</span>+(n<span class="hljs-number">-1</span>)位置时才为空（这里假设<span class="hljs-symbol">x</span>+(n<span class="hljs-number">-1</span>)&lt;m），执行插入操作，探测次数为n<span class="hljs-number">-1</span>次。<br>所以，总的探测次数是一个等差数列<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://pic1.zhimg.com/v2-c411339b79f92499dcb7b5f304c826f4_b.webp" srcset="/img/loading.gif"></p>
-<p>用第一个数字，依次和后面的每个比较，然后拆分成2部分，一部分小于等于，一部分大于，依次类推即可</p>
-<h4>选择排序</h4>
+</li>
+</ol>
+<h4>三、判断题</h4>
 
-<p><img src="https://pic1.zhimg.com/v2-1c7e20f306ddc02eb4e3a50fa7817ff4_b.webp" srcset="/img/loading.gif"></p>
-<p>每次选择最小的和未排序的第一个元素交换</p>
-<h4>堆排序</h4>
+<ol>
+<li><p>有n个数存放在一维数组中，在进行顺序查找时，这n个数的排列有序或无序其平均查找长度不是<del>不同</del>。</p>
+<p><code>平均查找长度是指：等概率下依次查找所有元素的比较次数。</code></p>
+<p><code>所以无论有序无序，平均长度=(1+2+3+4+...+n )/ n，只与元素个数有关</code></p>
+</li>
+<li><p>折半查找的效率不是<del>肯定高于</del>顺序查找</p>
+</li>
+<li><p>在二叉排序树中插入一个新结点，该新结点<strong>肯定是叶子结点</strong>。</p>
+</li>
+<li><p>一棵二叉排序树的先序遍历序列正好是待排序数据的非递减序列</p>
+<p><code>任一结点的键值大于其左孩子(及其子孙)的键值且小于其右孩子(及其子孙)的键值。</code></p>
+<p><code>因此，中序LNR遍历一棵二叉排序树所得的结点访问序列是键值的递增序列。</code></p>
+</li>
+<li><p>n个结点的二叉排序树有多种，其中<strong>树的高度最小的二叉排序树是最佳的</strong>。</p>
+</li>
+<li><p>哈希函数的选择<strong>原则之一是函数比较简单且能在较短时间内计算出结果</strong>。</p>
+</li>
+<li><p>在哈希检索中，“比较”操作一般不<del>是不可避免的</del>。（  ）</p>
+</li>
+<li><p>哈希函数不是<del>越复杂越好，因为这样随机性好，冲突概率小。</del>哈希函数越复杂，则时间就会越多</p>
+</li>
+</ol>
+<h4>四、计算题</h4>
 
-<p>最小堆：任一结点的值都不大于它的两个孩子的值 </p>
-<p>最大堆：任一结点的值都不小于它的两个孩子的值</p>
-<p>画出二叉树，然后调整为堆即可</p>
-<h4>归并排序</h4>
+<ol>
+<li>画出对长度为10的有序表进行折半查找的判定树，并求其等概率时查找成功的平均查找长度。</li>
+</ol>
+<p>​     <img src="https://uploadfiles.nowcoder.com/images/20180315/5994168_1521091807507_243FFB1D3538098C4D8461885A5761FE" srcset="/img/loading.gif"></p>
+<ol start="2">
+<li>在一 棵空的二叉排序树中依次插入关键字序列为12，7，17，11，16，2，13，9，21，4，请画出所得到的二叉排序树。</li>
+</ol>
+<p>​     <img src="https://uploadfiles.nowcoder.com/images/20170304/5437584_1488613304796_072774B6B658B3603E1AA7198722775C" srcset="/img/loading.gif"></p>
+<ol start="3">
+<li><p>已知长度为12的表：（Jan, Feb, Mar, Apr, May, June, July, Aug, Sep, Oct, Nov, Dec）</p>
+<p>(1)  试按表中元素的顺序依次插入一棵初始为空的二叉排序树，画出插入完成之后的二叉排序树，并求其在等概率的情况下查找成功的平均查找长度。</p>
+<p>(2)  若对表中元素先进行排序构成有序表，求在等概率的情况下对此有序表进行折半查找时查找成功的平均查找长度。</p>
+<p>(3)  按表中元素顺序构造一棵平衡二叉排序树，并求其在等概率的情况下查找成功的平均查找长度。</p>
+</li>
+</ol>
+<p>​      <img src="https://i.loli.net/2020/12/22/omfLEDeZBFpQSXt.png" srcset="/img/loading.gif"></p>
+<ol start="4">
+<li><p>假定对有序表：（3，4，5，7，24，30，42，54,  63，72，87，95）进行折半查找，回答下列问题：</p>
+<p>（1）画出描述折半查找过程的判定树；</p>
+<p>（2）若查找元素54，需依次与哪些元素比较？</p>
+<p>（3）若查找元素90，需依次与哪些元素比较？</p>
+<p>（4）假定每个元素的查找概率相等，求查找成功时的平均查找长度。<img src="https://i.loli.net/2020/12/22/WdItqr4x1oe3ZmC.png" srcset="/img/loading.gif"></p>
+</li>
+<li><p>选取散列函数H（key）=（3*key）%11，用线性探测法处理冲突，对下列关键码序列{22，41，53，8，46，30，1，31，66}构造一个哈希地址空间为0～10，表长为11的哈希表，。</p>
+</li>
+</ol>
+<p><img src="https://i.loli.net/2020/12/22/N3PCxDWUGbhAwH4.png" srcset="/img/loading.gif"></p>
 
-<p><img src="https://pic3.zhimg.com/80/v2-145011b5968388bd76e3b91853b136f6_720w.jpg" srcset="/img/loading.gif"></p>
-<p>二二合并排序</p>
-<h4>基数排序</h4>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/DSReviewPaper/">DSReviewPaper</a>
+                    
+                  </div>
                 
               </div>
               
@@ -277,18 +350,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/12/22/chap1%E7%BB%AA%E8%AE%BA%E5%A4%8D%E4%B9%A0%E9%A2%98/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">chap1绪论复习题</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/12/22/9-%E6%9F%A5%E6%89%BE/">
-                        <span class="hidden-mobile">9_查找</span>
+                      <a href="/2020/12/22/chap5%E5%9B%BE%E5%A4%8D%E4%B9%A0%E9%A2%98/">
+                        <span class="hidden-mobile">chap5图复习题</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

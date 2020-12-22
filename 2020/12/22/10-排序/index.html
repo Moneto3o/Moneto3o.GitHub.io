@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Scarlett_D">
   <meta name="keywords" content="">
-  <title>7_Huffman树及算法 - Moneto3o</title>
+  <title>10_排序 - Moneto3o</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="7_Huffman树及算法">
+            <span class="h2" id="subtitle" title="10_排序">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-15 08:49" pubdate>
-        December 15, 2020 am
+      <time datetime="2020-12-22 15:00" pubdate>
+        December 22, 2020 pm
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      253 字
+      205 字
     </span>
   
 
@@ -224,25 +224,44 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">7_Huffman树及算法</h1>
+            <h1 style="display: none">10_排序</h1>
             
             <div class="markdown-body">
-              <h3>哈夫曼树与哈夫曼算法</h3>
+              <h4>插入排序</h4>
 
-<p><strong>哈夫曼树不唯一、时刻考虑权值最小</strong></p>
-<p><strong>路径: </strong>从一个结点到另一个结点的分支序列</p>
-<p><strong>路径长度:  </strong>根结点到L层结点路径长度L-1 (完全二叉树是总路径长度最短的二叉树)</p>
-<h4>Huffman树: </h4>
+<ul>
+<li><p>直接插入排序 <code>就是选择第一个元素之后，在从后面选择小的，往前插</code></p>
+<p><img src="https://pic3.zhimg.com/v2-91b76e8e4dab9b0cad9a017d7dd431e2_b.webp" srcset="/img/loading.gif"></p>
+</li>
+<li><p>折半插入排序</p>
+</li>
+<li><p>表插入排序</p>
+</li>
+<li><p>希尔排序</p>
+</li>
+</ul>
+<h4>冒泡排序</h4>
 
-<p>由n个带权值的叶结点构成的二叉树中,树的最大带权长度(WPL)最小的二叉树称为最优二叉树</p>
-<p><img src="https://i.loli.net/2020/12/15/hWX4R9MKypGocqS.png" srcset="/img/loading.gif" alt="example"></p>
-<p><img src="https://i.loli.net/2020/12/15/jVy6DCFdxcSOANl.gif" srcset="/img/loading.gif"></p>
-<h4>huffman编码</h4>
+<p><img src="https://pic4.zhimg.com/v2-33a947c71ad62b254cab62e5364d2813_b.webp" srcset="/img/loading.gif"></p>
+<p>每两个挨着比，每趟最大的沉底</p>
+<h4>快速排序</h4>
 
-<p>例题: 设某通讯系统中一个待传输的文本有6个不同字符，它们的出现频率分别是0.5,0.8,1.4,2.2,2.3,2.8，试设计哈夫曼编码</p>
-<p><img src="https://i.loli.net/2020/12/15/A6p9vIMjdKyXUm8.png" srcset="/img/loading.gif"></p>
-<p>出现频率为0.5的字符编码为1000 出现频率为0.8的字符编码为1001 出现频率为1.4的字符编码为101 出现频率为2.2的字符编码为00 出现频率为2.3的字符编码为01 出现频率为2.8的字符编码为11</p>
+<p><img src="https://pic1.zhimg.com/v2-c411339b79f92499dcb7b5f304c826f4_b.webp" srcset="/img/loading.gif"></p>
+<p>用第一个数字，依次和后面的每个比较，然后拆分成2部分，一部分小于等于，一部分大于，依次类推即可</p>
+<h4>选择排序</h4>
 
+<p><img src="https://pic1.zhimg.com/v2-1c7e20f306ddc02eb4e3a50fa7817ff4_b.webp" srcset="/img/loading.gif"></p>
+<p>每次选择最小的和未排序的第一个元素交换</p>
+<h4>堆排序</h4>
+
+<p>最小堆：任一结点的值都不大于它的两个孩子的值 </p>
+<p>最大堆：任一结点的值都不小于它的两个孩子的值</p>
+<p>画出二叉树，然后调整为堆即可</p>
+<h4>归并排序</h4>
+
+<p><img src="https://pic3.zhimg.com/80/v2-145011b5968388bd76e3b91853b136f6_720w.jpg" srcset="/img/loading.gif"></p>
+<p>二二合并排序</p>
+<h4>基数排序</h4>
             </div>
             <hr>
             <div>
@@ -258,18 +277,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/12/22/8-%E5%9B%BE/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">8_图</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/12/15/6-%E6%A0%91%E5%92%8C%E6%A3%AE%E6%9E%97/">
-                        <span class="hidden-mobile">6_树和森林</span>
+                      <a href="/2020/12/22/9-%E6%9F%A5%E6%89%BE/">
+                        <span class="hidden-mobile">9_查找</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

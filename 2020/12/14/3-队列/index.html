@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      686 字
+      707 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9
+      10
        分钟
     </span>
   
@@ -236,6 +236,7 @@
 <p>一端插入另一端删除</p>
 <h4>1.顺序队列</h4>
 
+<p>由于顺序队列容易假溢出 于是通常采用循环队列</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//顺序队列定义</span><br>	<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><br>        <span class="hljs-keyword">int</span> data[MAXSIZE];<span class="hljs-comment">//存储队列中的数据元素</span><br>        <span class="hljs-keyword">int</span> front;<span class="hljs-comment">//指向队列首元素的前一个单元</span><br>        <span class="hljs-keyword">int</span> rear;<span class="hljs-comment">//指向实际的队列尾元素单元</span><br>    &#125;sqQueue;<br><br></code></pre></td></tr></table></figure>
 
 <p><strong>1.1循环队列</strong></p>

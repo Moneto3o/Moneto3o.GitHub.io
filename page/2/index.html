@@ -17,25 +17,9 @@
   <meta name="description" content="">
   <meta name="author" content="Scarlett_D">
   <meta name="keywords" content="">
-  <title>7_Huffman树及算法 - Moneto3o</title>
+  <title>Moneto3o</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
-
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
-    
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  
 
 
 
@@ -63,7 +47,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -162,50 +146,17 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="7_Huffman树及算法">
+            <span class="h2" id="subtitle" title="Welcome to Scarlett's la la land">
               
             </span>
 
             
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-15 08:49" pubdate>
-        December 15, 2020 am
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      253 字
-    </span>
-  
-
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      2
-       分钟
-    </span>
-  
-
-  
-  
-</div>
-
-            
           </div>
 
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
           
         </div>
       </div>
@@ -214,91 +165,109 @@
 
   <main>
     
-      
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">7_Huffman树及算法</h1>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/12/12/0-%E7%BB%AA%E8%AE%BA/">0_绪论</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/12/12/0-%E7%BB%AA%E8%AE%BA/">
+          
+          
             
-            <div class="markdown-body">
-              <h3>哈夫曼树与哈夫曼算法</h3>
+          
+          ​     数据(data)是对客观事物的符号表示。在计算机科学中是指所有能输入到计算机中并被计算机程序处理的符号的总称。
+​     数据元素(data element)是数据的基本单位，在计算机程序中通常作为一个整体进行考虑和处理。
+​     数据项(Data Item)数据项是数据的不可分割的最小单位。
+​     数据对象(data object)是性质相同的数据元素的集合，是数据的一个
+        </a>
+      </p>
 
-<p><strong>哈夫曼树不唯一、时刻考虑权值最小</strong></p>
-<p><strong>路径: </strong>从一个结点到另一个结点的分支序列</p>
-<p><strong>路径长度:  </strong>根结点到L层结点路径长度L-1 (完全二叉树是总路径长度最短的二叉树)</p>
-<h4>Huffman树: </h4>
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-12 15:06" pubdate>
+              2020-12-12
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
 
-<p>由n个带权值的叶结点构成的二叉树中,树的最大带权长度(WPL)最小的二叉树称为最优二叉树</p>
-<p><img src="https://i.loli.net/2020/12/15/hWX4R9MKypGocqS.png" srcset="/img/loading.gif" alt="example"></p>
-<p><img src="https://i.loli.net/2020/12/15/jVy6DCFdxcSOANl.gif" srcset="/img/loading.gif"></p>
-<h4>huffman编码</h4>
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/12/10/Hello-World/">Hello World</a>
+      </h1>
 
-<p>例题: 设某通讯系统中一个待传输的文本有6个不同字符，它们的出现频率分别是0.5,0.8,1.4,2.2,2.3,2.8，试设计哈夫曼编码</p>
-<p><img src="https://i.loli.net/2020/12/15/A6p9vIMjdKyXUm8.png" srcset="/img/loading.gif"></p>
-<p>出现频率为0.5的字符编码为1000 出现频率为0.8的字符编码为1001 出现频率为1.4的字符编码为101 出现频率为2.2的字符编码为00 出现频率为2.3的字符编码为01 出现频率为2.8的字符编码为11</p>
+      <p class="index-excerpt">
+        <a href="/2020/12/10/Hello-World/">
+          
+          
+            
+          
+          Hiii! This is my first blog, can’t wait to share my tech ideas with u guys!
 
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-10 09:06" pubdate>
+              2020-12-10
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
+
+
+
               </div>
-              
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
-              
-              
-                <div class="post-prevnext row">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2020/12/22/8-%E5%9B%BE/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">8_图</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2020/12/15/6-%E6%A0%91%E5%92%8C%E6%A3%AE%E6%9E%97/">
-                        <span class="hidden-mobile">6_树和森林</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
             </div>
-
-            
-          </article>
+          </div>
         </div>
       </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
     
 
     
@@ -381,15 +350,9 @@
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 

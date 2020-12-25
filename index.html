@@ -181,6 +181,91 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2020/12/25/Linux%E5%A4%8D%E4%B9%A0/">Linux复习</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/12/25/Linux%E5%A4%8D%E4%B9%A0/">
+          
+          
+            
+          
+          文件系统
+
+七种文件类型
+
+
+
+文件类型标识
+文件类型
+
+
+
+-
+普通文件
+
+
+d
+目录
+
+
+l
+符号链接
+
+
+s（伪文件）
+套接字
+
+
+b（伪文件）
+块设备
+
+
+c（伪文件）
+字符设备
+
+
+p（伪文件）
+管道
+
+
+创建多级目录:
+mkdir -p xx/yy/zz
+删除多级目录 (rmdir拒绝删除非空目录和文件)
+rmdir -p xx/yy/zz
+递归删除目录其中的所有文件和子目录
+rm -
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-25 16:03" pubdate>
+              2020-12-25
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux-ShellReview/">Linux&ShellReview</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2020/12/24/chap7%E6%8E%92%E5%BA%8F%E5%A4%8D%E4%B9%A0%E9%A2%98/">chap7排序复习题</a>
       </h1>
 
@@ -553,7 +638,10 @@
           
             
           
-          插入排序
+          
+
+
+插入排序
 
 
 直接插入排序 就是选择第一个元素之后，在从后面选择小的，往前插
@@ -565,6 +653,8 @@
 
 希尔排序
 
+将初始序列分成几个序列，然后将差分的序列排好
+
 
 冒泡排序
 
@@ -574,14 +664,7 @@
 
 
 用第一个数字，依次和后面的每个比较，然后拆分成2部分，一部分小于等于，一部分大于，依次类推即可
-选择排序
-
-
-每次选择最小的和未排序的第一个元素交换
-堆排序
-
-最小堆：任一结点的值都不大于它的两个孩子的值 
-最大堆：
+通过一趟排序把待排序序列分成两部分，一部分比关键字（枢轴）大，一部
         </a>
       </p>
 
@@ -632,51 +715,6 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
             <time datetime="2020-12-22 14:59" pubdate>
-              2020-12-22
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2020/12/22/8-%E5%9B%BE/">8_图</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/12/22/8-%E5%9B%BE/">
-          
-          
-            
-          
-          
-    图
-
-基本概念:
-
-图的分类: 有向图和无向图
-弧、弧头、弧尾: 有向图的边称为弧。无向图叫做边。
-无向完全图: 任何两点之间都有边的无向图。 
-有向完全图: 任何两点之间都有弧的有向图。
-权：图的边附带数值，这个数值叫权。
-带权图: 每条边都带权的图称为带权图。
-顶点的度、入度、出度: 1. 无向图中顶点v的度是与该顶点相关联的边的数目，记为D(v)。 2. 有向图中，把以顶点v为终点
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-12-22 14:57" pubdate>
               2020-12-22
             </time>
           </div>

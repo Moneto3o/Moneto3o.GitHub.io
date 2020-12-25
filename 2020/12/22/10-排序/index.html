@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      205 字
+      513 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      5
        分钟
     </span>
   
@@ -227,7 +227,10 @@
             <h1 style="display: none">10_排序</h1>
             
             <div class="markdown-body">
-              <h4>插入排序</h4>
+              <p><img src="https://i.loli.net/2020/12/22/ilKYdFc6OtjhHvI.png" srcset="/img/loading.gif"></p>
+<p><img src="https://pic1.zhimg.com/v2-f50f588e8c546bb649b78f8ccc20689c_r.jpg?source=1940ef5c" srcset="/img/loading.gif"></p>
+<p><img src="https://i.loli.net/2020/12/23/7EdGfMhowDbyNqv.jpg" srcset="/img/loading.gif"></p>
+<h4>插入排序</h4>
 
 <ul>
 <li><p>直接插入排序 <code>就是选择第一个元素之后，在从后面选择小的，往前插</code></p>
@@ -238,16 +241,25 @@
 <li><p>表插入排序</p>
 </li>
 <li><p>希尔排序</p>
+<p><img src="https://pic4.zhimg.com/50/v2-26d982ad88862f930b1b7e67ad87b37f_hd.webp?source=1940ef5c" srcset="/img/loading.gif"></p>
+<p><code>将初始序列分成几个序列，然后将差分的序列排好</code></p>
 </li>
 </ul>
 <h4>冒泡排序</h4>
 
 <p><img src="https://pic4.zhimg.com/v2-33a947c71ad62b254cab62e5364d2813_b.webp" srcset="/img/loading.gif"></p>
-<p>每两个挨着比，每趟最大的沉底</p>
+<p><code>每两个挨着比，每趟最大的沉底</code></p>
 <h4>快速排序</h4>
 
 <p><img src="https://pic1.zhimg.com/v2-c411339b79f92499dcb7b5f304c826f4_b.webp" srcset="/img/loading.gif"></p>
 <p>用第一个数字，依次和后面的每个比较，然后拆分成2部分，一部分小于等于，一部分大于，依次类推即可</p>
+<p><code>通过一趟排序把待排序序列分成两部分，一部分比关键字（枢轴）大，一部分比关键字小，重复以上过程，直到排序完成</code></p>
+<p>一趟快速排序的算法是：  </p>
+<p>   1）设置两个变量i、j，排序开始的时候：i=0，j=N-1；  </p>
+<p>   2）以第一个数组元素作为关键数据，赋值给key，即key=A[0]；  </p>
+<p>   3）从j开始向前搜索，即由后开始向前搜索(j–)，找到第一个小于key的值A[j]，将A[j]和A[i]互换；  </p>
+<p>   4）从i开始向后搜索，即由前开始向后搜索(i++)，找到第一个大于key的A[i]，将A[i]和A[j]互换；  </p>
+<p>   5）重复第3、4步，直到i=j；     (3,4步中，没找到符合条件的值，即3中A[j]不小于key,4中A[i]不大于key的时候改变j、i的值，使得j=j-1，i=i+1，直至找到为止。找到符合条件的值，进行交换的时候i，     j指针位置不变。另外，i==j这一过程一定正好是i+或j-完成的时候，此时令循环结束）。</p>
 <h4>选择排序</h4>
 
 <p><img src="https://pic1.zhimg.com/v2-1c7e20f306ddc02eb4e3a50fa7817ff4_b.webp" srcset="/img/loading.gif"></p>

@@ -227,7 +227,7 @@
             <h1 style="display: none">Linux复习</h1>
             
             <div class="markdown-body">
-              <h4>文件系统</h4>
+              <h3>文件系统</h3>
 
 <p><strong>七种文件类型</strong></p>
 <table>
@@ -283,9 +283,9 @@
 <p><code>ls -i</code></p>
 <p><strong>显示文件内容<u>带行号</u></strong></p>
 <p><code>cat -n filename</code></p>
-<p>**硬链接 **</p>
+<p><strong>硬链接</strong></p>
 <p><code>ln srcFile hardLink(硬链接文件名)</code></p>
-<p>**软链接 **</p>
+<p><strong>软链接</strong></p>
 <p><code>ln -s srcFile softLink(软链接文件名)</code></p>
 <figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs clojure">[<span class="hljs-comment">^tips:</span>不论硬链接文件还是软链接文件，内容都和源文件一样。<br>修改硬连接文件或者符号链接文件，另两个文件同样变化。]<br></code></pre></td></tr></table></figure>
 
@@ -306,7 +306,7 @@
 <p>查看主目录内容并将结果<strong>追加</strong>到f1  <code>ls&gt;&gt; f1</code></p>
 <p>显示lslarge的第<strong>6-10行</strong></p>
 <p><code>head lslarge|tail -5  </code>或 <code>tail lslarge -n +6|head -n 5</code></p>
-<h4>压缩</h4>
+<h3>压缩</h3>
 
 <p><strong>tar命令</strong>常用参数:</p>
 <p>-c 建立新的压缩文件 create</p>
@@ -324,7 +324,7 @@
 <p><code>tar -czvf home.gz ~</code></p>
 <p>将home.<strong>gz</strong>文件<strong>解压缩到</strong>/tmp目录</p>
 <p><code>tar -xzvf  home.gz -C  /tmp</code></p>
-<h4>vi编辑器</h4>
+<h3>vi编辑器</h3>
 
 <p><strong>搜索</strong> /（向前搜索）?（向后搜索）n（寻找下一个)</p>
 <p>光标<strong>定位到文件首</strong> <code>gg</code></p>
@@ -355,7 +355,7 @@
 <p><strong>定义宏</strong> 将q键定义成5x  <code>:map q 5x</code></p>
 <p><strong>增加</strong>当前日期（date）<code>：r !date</code></p>
 <p>所有文本<strong>连成一行</strong> <code>J命令</code></p>
-<h4>用户和组管理</h4>
+<h3>用户和组管理</h3>
 
 <p>没有设置密码的用户  /etc/shadow文件中密码为!!，所以不能登录</p>
 <p><strong>清除</strong>stu2的<strong>密码</strong> <code>passwd -d  stu2 </code></p>
@@ -374,7 +374,7 @@
 <p>有rwx权限的目录 <code> 能将工作目录切换为memos，能显示列表，能创建文件</code></p>
 <p>指定afile的<strong>属主</strong>为stu1，<strong>属组</strong>为root <code>chown stu1:root afile</code> <u>一般格式为属主:属组</u></p>
 <p><strong>setfacl</strong>指定stu1对bfile的执行权限为读写 <code>setfacl –m u:stu1:rw bfile</code></p>
-<h4>系统资源管理</h4>
+<h3>系统资源管理</h3>
 
 <p><strong>磁盘分区</strong> <code>fdisk /dev/sda -&gt;交互</code></p>
 <p><strong>创建VG</strong>  <code>pvcreate /dev/vda -&gt; vgcreate -s 8M vgname /dev/vda</code> 指定PE大小为8M VG名为vgname</p>
@@ -394,7 +394,7 @@
 <p>at命令用<u>相对计时法</u></p>
 <p>周期性计划 natasha在每天14:23执行echo“file­_world” <code>crontab -e -u natasha -&gt;  vi编辑器输入: 23 14 * * * /bin/echo &quot;file_world&quot;</code>     </p>
 <p><code>-e : 执行文字编辑器</code> 被执行的命令通常要求用<u>绝对路径名</u></p>
-<h4>服务管理和网络管理</h4>
+<h3>服务管理和网络管理</h3>
 
 <p><strong>邮件</strong> <code>mail</code></p>
 <p><strong>消息</strong> <code>write 写入权限用mesg控制</code> </p>
@@ -431,6 +431,12 @@
                 <div class="post-prevnext row">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2020/12/27/Shell%E5%A4%8D%E4%B9%A0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Shell复习</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

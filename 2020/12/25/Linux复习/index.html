@@ -229,6 +229,7 @@
             <div class="markdown-body">
               <h3>文件系统</h3>
 
+<p>当前目录 <code>pwd</code></p>
 <p><strong>七种文件类型</strong></p>
 <table>
 <thead>
@@ -344,7 +345,7 @@
 <p>$(行尾)  0(行首)  G键(末尾行) 回车(下一行行首) 空格(右移一格) 退格键(左移一格)</p>
 <p><strong>只读方式打开</strong> <code>-R</code> 强制保存退出 <code>:wq!</code>  不保存退出 <code>:q！</code></p>
 <p>将<u>myfile</u>文件内容<strong>追加到truth</strong>，<code>另存为mytruth文件</code>，而truth文件的内容不变。</p>
-<p>**vi  truth **之后，在命令模式下<u>:r myfile</u>,然后<code>：w mytruth,然后:q!</code></p>
+<p><strong>vi  truth</strong>之后，在命令模式下<u>:r myfile</u>,然后<code>：w mytruth,然后:q!</code></p>
 <p><strong>前5行写到一个新文件</strong>中，文件名为mysecond  :1,5 w mysecond`</p>
 <p>将2号缓冲区的内容<strong>粘贴</strong>到文件头  <code>&quot;2P</code></p>
 <p>yy命令<strong>复制3行</strong>放到c缓冲区 <code>&quot;c3yy</code></p>

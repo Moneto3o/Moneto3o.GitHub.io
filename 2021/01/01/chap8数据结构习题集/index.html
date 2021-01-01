@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Scarlett_D">
+  <meta name="keywords" content="">
+  <title>chap8数据结构习题集 - Moneto3o</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"moneto3o.github.io","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Moneto3o</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="chap8数据结构习题集">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-01 13:17" pubdate>
+        January 1, 2021 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      32
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">chap8数据结构习题集</h1>
+            
+            <div class="markdown-body">
+              <h3>习题1 绪论</h3>
+
+<p>1.1 选择题</p>
+<ol>
+<li>数据结构是一门研究非数值计算的程序设计问题中 ,数据元素的 <strong>存储结构</strong> 、数据信息在计算机中的 <strong>存储结构</strong> 以及一组相关的运算等的课程。</li>
+<li>数据结构 DS(Data Struct) 可以被形式地定义为 DS=（D，R），其中 D 是 <strong>数据元素</strong> 的有限集合， R 是 D上的 <strong>关系</strong> 有限集合。</li>
+<li>在数据结构中，从逻辑上可以把数据结构分成 <strong>线性结构和非线性结构</strong> 。</li>
+<li>算法分析的目的是 <strong>分析算法的效率以求改进</strong>，算法分析的两个主要方面是 <strong>空间复杂性和时间复杂性</strong> 。</li>
+<li>计算机算法指的是 <strong>解决问题的有限运算序列</strong> ，它必具备输入、输出和 <strong>可行性、确定性和有穷性</strong> 等五个特性</li>
+</ol>
+<p>1.2.填空题</p>
+<ol>
+<li>数据结构的三个要点是 <u>数据元素的逻辑结构、数据在计算机中的存储结构 和数据的运算</u>。</li>
+<li>数据逻辑结构包括 <u>线性结构、树形结构、图形结构</u>三种类型，树形结构和图形结构合称为 <u>非线性结构</u>。</li>
+<li>在线性结构中，第一个结点 <u>没有</u> 前驱结点，其余每个结点有且只有 <u>1</u> 个前驱结点；最后一个结点 <u>没有</u> 后续结点，其余每个结点有且只有 1 个后续结点。</li>
+<li>在树形结构中， 树根结点 <u>没有</u> 前驱结点， 其余每个结点有且只有 1 个直接前驱结点， 叶子结点 <u>没有</u> 后续结点，其余每个结点的直接后续结点可以 <u>任意多个</u> 。</li>
+<li>在图形结构中，每个结点的前驱结点数和后续结点数可以 <u>任意多个</u>。</li>
+<li>线性结构中元素之间存在<u>一对一</u>关系， 树形结构中元素之间存在<u>一对多</u> 关系， 图形结构中元素之间存在 <u>多对多</u> 关系。</li>
+<li>算法的五个重要特性是<u>有穷性</u>、<u>确定性</u>、<u>可行性</u>、<u>输入</u>、<u>输出</u>。</li>
+<li>分析下面算法（程序段） ，给出最大语句频度： n^2 ， 时间复杂度：  O (n^2)。<br>for (i=0;i&lt;n;i++)<br>for (j=0;j&lt;n; j++)<br>A[i][j]=0; </li>
+<li>分析下面算法（程序段） ，给出最大语句频度： n (n+1)/2 ， 时间复杂度：  O (n^2)<br>for (i=0;i&lt;n;i++)<br>for (j=0; j&lt;i; j++)<br>A[i][j]=0; </li>
+<li>分析下面算法（程序段） ，最大语句频度： n^3 ， 时间复杂度： O (n^3)<br>s=0;<br>for (i=0;i&lt;n;i++)<br>for (j=0;j&lt;n;j++)<br>for (k=0;k&lt;n;k++)<br>s=s+B[i][j][k];<br>sum=s; </li>
+<li>分析下面算法（程序段）给出最大语句频度： n^1/2， 时间复杂度： O (n^1/2)<br>i=s=0;<br>while (s&lt;n) { i++; s+=i; } </li>
+<li>分析下面算法（程序段）给出最大语句频度： log 2n， 时间复杂度： O (log 2n )<br>i=1;<br>while (i&lt;=n) i=i*2; </li>
+</ol>
+<h3>习题二 线性表</h3>
+
+<p>2.1 单项选择题</p>
+<ol>
+<li>一个向量（即一批地址连续的存储单元）第一个元素的存储地址是 100，每个元素的长度为 2，则第5 个元素的地址是 <strong>108</strong>。<br>A. 110 B. 108 C. 100 D. 120 </li>
+<li>线性表的顺序存储结构是一种 <strong>随机存取</strong> 的存储结构，而链式存储结构是一种  <strong>顺序存取</strong> 的存储结构。</li>
+<li>线性表的逻辑顺序与存储顺序总是一致的，这种说法 <strong>不正确</strong> 。</li>
+<li>线性表若采用链式存储结构时，要求内存中可用存储单元的地址 <strong>连续或不连续都可以</strong> 。</li>
+<li>在以下的叙述中，正确的是 <strong>线性表的链表存储结构适用于频繁插入/删除数据元素的情况</strong>。</li>
+<li>每种数据结构都具备三个基本运算：插入、删除和查找，这种说法 <strong>正确</strong>。</li>
+<li>不带头结点的单链表 head 为空的判定条件是 <strong>head==NULL</strong>。</li>
+<li>带头结点的单链表 head 为空的判定条件是 <strong>head-&gt;next= =NULL</strong>。</li>
+<li>非空的循环单链表 head 的尾结点（由 p 所指向）满足 <strong>p-&gt;next= =head</strong>。</li>
+<li>在双向循环链表的 p 所指结点之后插入 s所指结点的操作是 **s-&gt;left=p; s-&gt;right=p-&gt;right; p-&gt;right-&gt;left=s; p-&gt;right=s;**。</li>
+<li>在一个单链表中， 已知 q 所指结点是 p 所指结点的前驱结点， 若在 q 和 p 之间插入 s结点， 则执行 <strong>q-&gt;next=s; s-&gt;next=p;</strong></li>
+<li>在一个单链表中，若 p 所指结点不是最后结点，在 p 之后插入 s 所指结点，则执行 <strong>s-&gt;next=p-&gt;next; p-&gt;next=s;</strong></li>
+<li>在一个单链表中，若删除 p 所指结点的后续结点，则执行 <strong>p-&gt;next= p-&gt;next-&gt;next ；</strong></li>
+<li>从一个具有 n 个结点的单链表中查找其值等于 x 结点时，在查找成功的情况下，需平均比较 <strong>(n+1)/2</strong> 个结点</li>
+<li>在一个具有 n 个结点的有序单链表中插入一个新结点并仍然有序的时间复杂度是 <strong>O(n)</strong></li>
+<li>给定有 n 个元素的向量，建立一个有序单链表的时间复杂度是 <strong>O (n^2)</strong></li>
+</ol>
+<p>2.2 填空题（将正确的答案填在相应的空中）</p>
+<ol>
+<li>对于顺序表（采用顺序存储结构的线性表） (a 1，a2，… , an) ，设 L 表示一个元素占用的存储单元个数， LOC(ai ) 表示线性表第 i 个元素的地址，已知第 1 个元素的地址为 LOC(a1) ，则 LOC(ai )= </li>
+<li>向一个长度为 n 的顺序表的第 i 个元素（ 1≤i ≤n+1）之前插入一个元素时，需向后移动  <strong>n-i+1</strong> 个元素</li>
+<li>向一个长度为 n 的顺序表中删除第 i 个元素（ 1≤ i ≤n）时，需向前移动 <strong>n-i</strong> 个元素。</li>
+<li>单链表可以看做 <u>线性表</u> 的链式存储表示</li>
+<li>在双链表中，每个结点有两个指针域，一个指向 <u>前驱结点</u> ，另一个指向 <u>后继结点</u> 。</li>
+<li>带头结点的单链表中，除头结点外，任一结点的存储位置是在<u>其前驱结点的指针域中</u>。</li>
+<li>单链表中引入头结点的作用是<u>在链表的第一个位置上行插入和删除等操作时无须进行特殊处理</u></li>
+<li>一个长为 n 的线性表，其排序时间性能最优为 <u>O(n*Log 2n)</u>。</li>
+<li>在一个单链表中 p 所指结点之前插入一个 s (值为 e)所指结点时，可执行如下操作：<br>q=head;<br>while (q-&gt;next!=p) q=q-&gt;next;<br>s= (struct node *)malloc(sizeof(struct node)); s-&gt;data=e;<br>q-&gt;next= <u>s</u> ; //填空<br>s-&gt;next= <u>p</u> ; //填空</li>
+<li>在一个单链表中删除 p 所指结点的后继结点时，应执行以下操作：<br>q= p-&gt;next;<br>p-&gt;next=  <u>q-&gt;next</u> ; //填空<br>free( <u>q</u> ) ; //填空</li>
+<li>在一个单链表中 p 所指结点之后插入一个 s 所指结点时，应执行 s-&gt;next= <u>p-&gt;next</u> 和 p-&gt;next=<u>s</u> 的 操作。</li>
+<li>对于一个具有 n 个结点的单链表，在<strong>已知 p</strong> 所指结点后插入一个新结点的时间复杂度是 <u>O (1)</u>  ；<br>在给定值为 x 的结点后插入一个新结点的时间复杂度是 <u>O (n)</u> </li>
+</ol>
+<h3>习题三 栈和队列</h3>
+
+<p>3.1 单项选择题</p>
+<ol>
+<li>一个栈的入栈序列 a，b，c，d，e，则栈的不可能的输出序列是 <strong>dceab</strong>。</li>
+<li>若已知一个栈的入栈序列是 1，2，3，…， n，其输出序列为 p1， p2，p3，…， pn，若 p1=n，则 pi为 <strong>n-i+1</strong></li>
+<li>栈结构通常采用的两种存储结构是 <strong>顺序存储结构和链式存储结构</strong></li>
+<li>判定一个顺序栈 ST（最多元素为 m0）为空的条件是 <strong>top= =0</strong>。</li>
+<li>判定一个顺序栈 ST（最多元素为 m0）为栈满的条件是 <strong>top= =m0-1</strong></li>
+<li>栈的特点是 <strong>先进后出</strong>，队列的特点是 <strong>先进先出</strong>。</li>
+<li>向一个栈顶指针为 HS的链栈中插入一个 s 所指结点时，则执行 **s —＞ next= HS; HS=s; ** 。( <u>不带空的头结点</u> )<br><code>如果带头结点 头插法为: s —＞ next= HS —＞ next; HS —＞ next=s; </code></li>
+<li>从一个栈顶指针为 HS的链栈中删除一个结点时，用 x 保存被删结点的值，则执行 <strong>x=HS —＞ data; HS= HS —＞ next;</strong> 。( 不带空的头结点 ) </li>
+<li>一个队列的数据入列序列是 1，2，3，4，则队列的出队时输出序列是 <strong>1 ，2，3，4</strong> 。</li>
+<li>判定一个循环队列 QU（最多元素为 m）为空的条件是 <strong>front= = rear</strong>。</li>
+<li>判定一个循环队列 QU（最多元素为 m, m= =Maxsize-1 ）为满队列的条件是 <strong>(rear+1)% Maxsize = =front</strong></li>
+<li>循环队列用数组 A[0，m-1] 存放其元素值， 已知其头尾指针分别是 front 和 rear ，则当前队列中的元素个数是 <strong>(rear-front+m)%m</strong>。</li>
+<li>栈和队列的共同点是 <strong>只允许在端点处插入和删除元素</strong></li>
+</ol>
+<p>3.2 填空题（将正确的答案填在相应的空中）</p>
+<ol>
+<li><p>向量、栈和队列都是 <u>线性</u> 结构，可以在向量的 <u>任何</u> 位置插入和删除元素；对于栈只能在 <u>栈顶</u> 插入和删除元素；对于队列只能在 队尾 插入元素和 队首 删除元素。</p>
+</li>
+<li><p>向栈中压入元素的操作是 <u>先移动栈顶指针，后存入元素</u></p>
+</li>
+<li><p>对栈进行退栈时的操作是 <u>先取出元素，后移动栈顶指针</u></p>
+</li>
+<li><p>在一个循环队列中，队首指针指向队首元素的 <u>前一个位置</u></p>
+</li>
+<li><p>从循环队列中删除一个元素时，其操作是 <u>先移动队首元素，后取出元素</u></p>
+</li>
+<li><p>在具有 n 个单元的循环队列中，队满时共有 <u>n-1</u> 个元素。</p>
+</li>
+<li><p>一个栈的输入序列是 12345，则栈的输出序列 43512 是<u>不可能的</u></p>
+</li>
+<li><p>一个栈的输入序列是 12345，则栈的输出序列 12345 <u>是可能的</u></p>
+</li>
+<li><p>想象六辆列车位于图中堆栈的输入一边，列车编号为 123456，按此顺序开进堆栈，且可在任意时刻开走，则能否得到 32564l 出站序列 ?能否得到 154623 出站序列 ?在可能的情况下，说明如何实现。能得到 325641．</p>
+<p>实现过程为； Push，push，push，pop，pop，Push，push，pop，push，pop，pop，pop。不能得到 154623。</p>
+</li>
+<li><p>设循环队列存放在向量 sq.data[o．．m]中，则队头指针 sq.front 在循环意义下的加 1 操作可用模运算表示为 (sq.front+1) MOD m 。若用牺牲一个单元的办法来区分队满和队空条件，则队满条件可表示为 (sq.rear+1) MOD m＝sq.front 。</p>
+</li>
+<li><p>设顺序栈存放在一维数组 s[M] ，栈底位置是 m-1，则栈空条件 <u>top=0</u> ，栈满条件是 <u>top=m</u> </p>
+</li>
+<li><p>循环队列只有下溢，没有上溢。 ( <u>错误</u> ) </p>
+</li>
+<li><p>队列和栈都是运算受限的线性表，只允许在表的两端进行运算。（ <u>正确</u> ）</p>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/DSReviewPaper/">DSReviewPaper</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/01/01/chap9%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%80%89%E6%8B%A9%E9%A2%98/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">chap9数据结构选择题</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/12/27/Shell%E5%A4%8D%E4%B9%A0/">
+                        <span class="hidden-mobile">Shell复习</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Scarlett_D">
   <meta name="keywords" content="">
-  <title>R语言chap1 - Moneto3o</title>
+  <title>chap3系统总线 - Moneto3o</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="R语言chap1">
+            <span class="h2" id="subtitle" title="chap3系统总线">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-03-03 19:00" pubdate>
-        March 3, 2021 pm
+      <time datetime="2021-05-30 21:20" pubdate>
+        May 30, 2021 pm
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      474 字
+      2k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      22
        分钟
     </span>
   
@@ -224,57 +224,81 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">R语言chap1</h1>
+            <h1 style="display: none">chap3系统总线</h1>
             
             <div class="markdown-body">
-              <h2>第一章 R语言概述</h2>
+              <h1 id="第三章-系统总线"><a href="#第三章-系统总线" class="headerlink" title="第三章  系统总线"></a>第三章  系统总线</h1><h2 id="CHAP1-CONCEPT"><a href="#CHAP1-CONCEPT" class="headerlink" title="CHAP1 CONCEPT"></a>CHAP1 CONCEPT</h2><p>1.总线结构：分层结构<br>2.总线分类：片内总线；系统总线；通信总线<br>                       系统总线——地址总线，数据总线，控制总线<br>3.总线的性能指标：总线宽度，总线带宽，总线复用、总线控制方式（并发、仲裁）<br>    总线带宽（总线数据传输率）<br>    集中式总线仲裁（判优）—— 链式、计数器定时、独立请求<br>4.总线标准<br>5.总线通信控制<br>    总线周期（完成一次总线操作），包括：<br>      申请分配阶段，寻址阶段，传数阶段，结束阶段<br>    (1)同步通信   (2)异步通信    (3)半同步通信   (4)分离式通信</p>
+<img src="https://i.loli.net/2021/05/30/Q2MvIEo3hxFAZr1.png" srcset="/img/loading.gif" style="zoom:80%;" />
 
-<h3>R简介</h3>
+<h2 id="CHAP2-EXERCISE"><a href="#CHAP2-EXERCISE" class="headerlink" title="CHAP2 EXERCISE"></a>CHAP2 EXERCISE</h2><p>选择题</p>
+<ol>
+<li><p>计算机使用总线结构便于增减外设，同时_____。<br>A．减少了信息传输量<br>B．提高了信息的传输速度<br><strong>C．减少了信息传输线的条数</strong><br>D.  加重了CPU的工作量<br>答案：C</p>
+</li>
+<li><p>总线中地址线的作用是_____。</p>
+<pre><code>A.  只用于选择存储器单元
+B.  由设备向主机提供地址
+**C．用于选择指定存储器单元和I/O设备接口电路的地址**</code></pre>
+<p>答案：C</p>
+</li>
+<li><p>在三种集中式总线控制中，____方式响应时间最快。<br>A．链式查询<br>B．计数器定时查询<br><strong>C．独立请求</strong><br>答案：C</p>
+</li>
+<li><p>在三种集中式总线控制中．独立请求方式响应时间最快，是以____代价的。<br>A．增加仲裁器的开销<br><strong>B．增加控制线数</strong><br>C．增加仲裁器的开销和增加控制线数<br>D.   增加总线占用时间<br>答案：B </p>
+</li>
+<li><p>三种集中式总线控制中，_____方式对电路故障最敏感<br><strong>A.  链式查询</strong><br>B．计数器定时查询<br>C．独立请求<br>答案：A  </p>
+</li>
+<li><p>在计数器定时查询方式下，若每次计数从上一次计数的终止点开始，则____。<br>A．设备号小的优先级高<br>  <strong>B．每个设备使用总线的机会相等</strong><br>  C．设备号大的优先级高<br>  答案：B</p>
+</li>
+<li><p>在计数器定时查询方式下，若计数从0开始，则_____。<br><strong>A．设备号小的优先级高</strong><br>B．每个设备使用总线的机会相等<br>C．设备号大的优先级高<br>答案：A</p>
+</li>
+<li><p>在独立请求方式下，若有N个设备，则_____。<br>A．有一个总线请求信号和一个总线响应信号<br><strong>B．有N个总线请求信号和N个总线响应信号</strong><br>C．有一个总线请求信号和N个总线响应信号<br>答案：B</p>
+</li>
+<li><p>在链式查询方式下，若有N个设备，则<br>A．有N条总线请求线<br>B．无法确定有几条总线请求线<br><strong>C．只有一条总线请求线</strong><br>答案：C</p>
+</li>
+<li><p>总线通信中的同步控制是_____。<br>   A．只适合于CPU控制的方式<br>   <strong>B．由统一时序控制的方式</strong><br>   C．只适合于外围设备控制的方式<br>   D.   所有指令执行时间都相同的方式<br>答案：B</p>
+</li>
+<li><p>总线的异步通信方式______。</p>
+<pre><code>**A．不采用时钟信号，只采用握手信号**
+B．既采用时钟信号，又采用握手信号
+C．既不采用时钟信号，又不采用握手信号</code></pre>
+<p>答案：A</p>
+</li>
+<li><p>信息只用一条传输线，且采用脉冲传输的方式称为____。<br><strong>A. 串行传输</strong>     B.并行传输     C. 并串行传输     D. 分时传输<br>答案：A</p>
+</li>
+<li><p>信息可以在两个方向上同时传输的总线属于____。<br>A. 单工总线    B. 半双工总线   <strong>C.  全双工总线</strong>    D. 单向总线<br>答案：C</p>
+</li>
+<li><p>异步串行通信的主要特点是_____。<br>A. 通信双方不需要同步<br><strong>B. 传送的每个字符是独立发送的</strong><br>C. 字符之间的间隔时间应相同<br>D. 传送的数据中不含控制信息<br>答案：B</p>
+</li>
+<li><p>在____计算机系统中，外设可以和主存储器单元统一编址。<br><strong>A. 单总线</strong>      B. 双总线       C. 三总线      D. 以上三种都可以<br>答案：A</p>
+</li>
+<li><p>在采用____对设备编址时，不需要专门的I/O指令组。<br><strong>A. 统一编址法</strong>       B. 单独编址法<br>C. 两者都是           D.两者都不是<br>答案：A</p>
+</li>
+<li><p>在微型机系统中，外围设备通过_____与主板的系统总线相连接。<br><strong>A. 适配器</strong>       B. 设备控制器        C. 计数器        D. 寄存器<br>答案：A</p>
+</li>
+</ol>
+<p>作业题: 3.4，3.7，3.14，3.16</p>
+<p><img src="https://i.loli.net/2021/05/26/ylzesDk1YIFT7bA.png" srcset="/img/loading.gif" style="zoom:15%;" />3.4 为什么要设置总线判优控制？常见的集中式总线控制有几种？各有何特点？哪种方式响应时间最快？哪种方式对电路故障最敏感？   </p>
+<p>解：<br>(1) 总线判优（仲裁）控制解决<u>多个部件同时申请总线时的使用权分配问题</u></p>
+<p>(2) 常见的集中式总线控制有三种：</p>
+<p>​       链式查询、计数器定时查询、独立请求；</p>
+<p>(3)  特点：<br>       链式查询方式连线简单，易于扩充，对电路故障<strong>最敏感</strong>；<br>       计数器定时查询方式优先级设置较灵活，对故障不敏感，连线及控制过程较复杂；<br>       独立请求方式判优速度<strong>最快</strong>，但硬件器件用量大，连线多，成本较高。</p>
+<p>3.5 解释概念：总线宽度、总线带宽、总线复用、总线主设备（或主模块）、 总线从设备（或从模块）、总线的传输周期、总线的通信控制。</p>
+<p>总线宽度：总线中数据总线的根数<br>总线带宽：数据传输速率，单位时间内总线上传输的数据量，通常以每秒传输的最大字节数（MBps）计。<br>总线复用：一条信号线上分时传送两种信号。通常将地址总线与数据总线共用一组信号线，分时使用。<br>总线主设备（或主模块）：<br>     指一次总线传输期间，拥有总线控制权的设备（模块）。<br>总线从设备（或从模块）：<br>      指一次总线传输期间，配合主设备完成传输的设备（模块），它只能被动接受主设备发来的命令；</p>
+<p>总线的传输周期：总线完成一次完整而可靠的传输所需时间。包括：申请分配阶段，寻址阶段，传数阶段，结束阶段<br>总线的通信控制：<br>       解决总线传送过程中双方的时间配合方式。即解决通信双方如何获知传输开始和传输结束，以及解决通信双方协调配合问题。有同步通信；异步通信；半同步通信；分离式通信等方式。</p>
+<p><img src="https://i.loli.net/2021/05/26/ylzesDk1YIFT7bA.png" srcset="/img/loading.gif" style="zoom:15%;" />3.7 画图说明异步通信中请求与回答有哪几种互锁关系?</p>
+<img src="https://i.loli.net/2021/05/30/qHzUMltIToyW97u.png" srcset="/img/loading.gif" style="zoom: 80%;" />
 
-<p><strong>1、 R的功能：</strong></p>
-<p>​        绘图功能、数据分析</p>
-<p>​        功能的实现手段：工具（包、库）、编程语言</p>
-<p><strong>2、 百度百科：</strong></p>
-<p>​        R语言是一种用于<u>统计分析和绘图</u>的语言和操作环境</p>
-<p><strong>3、 延伸：</strong></p>
-<p>​        解释型的语言：</p>
-<p>​            <strong>逐行执行</strong>—Python（IPython、Shell）</p>
-<p>​            <strong>忽略底层，跨平台</strong>（Win、Linux—print(Hello)）</p>
-<p>​        编译型的语言：打包预编译后执行(统一打包—编译–dex) – 运行速度快</p>
-<p>​        R语言是一种<u>解释型</u>语言</p>
-<p>​        开源语言：Python(吉多)、Android(二次MIUI) — ios</p>
-<h3>R的演变</h3>
+<p><img src="https://i.loli.net/2021/05/26/ylzesDk1YIFT7bA.png" srcset="/img/loading.gif" style="zoom:15%;" />3.14 假设总线的时钟频率为8MHz，一个总线周期等于一个时钟周期。若在一个总线传输周期可并行传送16位的数据，求该总线的带宽。</p>
+<p>解：f=8MHz,T=1/f=1/8M秒，</p>
+<p>一个总线周期等于一个时钟周期</p>
+<p>所以：总线带宽=16/（1/8M） = 128Mbps</p>
+<p>3.15 在一个32位的总线系统中，总线时钟频率为66MHz，假设总线最短传输周期为4个时钟周期，试计算总线的最大数据传输率。若想提高传输率，可采取什么措施？</p>
+<p>解： 数据传输率（总线带宽）：<br>                    4B*（66MHz/4）= 66MBps</p>
+<p>​        提高数据传输率措施：<br>​           (1) 提高数据线宽度<br>​           (2)提高总线时钟频率<br>​           (3) 缩短总线传输周期</p>
+<p><img src="https://i.loli.net/2021/05/26/ylzesDk1YIFT7bA.png" srcset="/img/loading.gif" style="zoom:15%;" />3.16  在异步串行传输系统中，字符格式为：1个起始位、8个数据位、1个校验位，2个终止位。若要求每秒传输120个数据帧，计算数据传送的波特率和比特率。</p>
+<p>解：  波特率（数据传输速率）单位时间内传送的二进制数据<br>        的位数 bps<br>              （1+8+1+2）×120 =1440  bps          </p>
+<img src="https://i.loli.net/2021/05/30/KlywPdk5WAohEqj.png" srcset="/img/loading.gif" style="zoom:60%;" />
 
-<p>​        Ｓ语言</p>
-<p>​        Ｒ　＋　Ｒ　(创始人 Ross Ihaka和Robert Gentleman)</p>
-<h3>R的特点――why we use it</h3>
-
-<p>数组、列表、向量、矩阵　　运算</p>
-<p>提供了非常丰富的画图工具（方法）</p>
-<p>进行数据的转换：</p>
-<p>​    JSON: {name:zhangsan,pwd:123}</p>
-<p>​    XML: HTML  <head></head></p>
-<p>​              XML  &lt;头&gt;&lt;/头&gt; <tou></tou></p>
-<p>​              <name>zhangsan</name> —DOM</p>
-<p>​    TEXT(HTML):</p>
-<p>登陆操作：</p>
-<p>​    Web端：获取用户输入的数据（name=zhangsan，pwd=123）</p>
-<p>​    服务器端：接收数据—数据类型（请求头）</p>
-<p>R工作原理：<strong>面向对象</strong></p>
-<h3>R的使用（R包、R开发工具）</h3>
-
-<p><strong>1、完成R开发工具的使用—R核心：</strong></p>
-<p>​     Demo：实现一个婴儿的月龄和体重的案例—正相关性</p>
-<p>​     定义一个集合、列表等形式的变量，用于存储与月龄相关的十条数据；定义一个集合、列表等形式的变量，用于存储与体重相关的十条数据；</p>
-<p>​     R语言中，=的功能可以识别为赋值运算，正规的语法：<code>&lt;-</code></p>
-<p><img src="https://i.loli.net/2021/03/09/WX8Sjys1utGLvQp.png" srcset="/img/loading.gif"></p>
-<p>​    使用R的在线帮助文档：</p>
-<p><img src="https://i.loli.net/2021/03/09/hdH8GnQb74ygzwC.png" srcset="/img/loading.gif"></p>
-<p>​    R的工作空间：—自己实验</p>
-<p>​          当前的R的工作环境，在这个工作环境中包含R使用过程中定义的所有的变量和数据，并且与其    他的工作环境中的同名的变量和数据不冲突。</p>
-<p>​    <strong>获得工作空间：getwd()</strong></p>
-<p>​    <strong>设置工作空间：setwd(‘路径’)</strong></p>
-<p><img src="https://i.loli.net/2021/03/09/LYHo9WTkscyvKMl.png" srcset="/img/loading.gif"></p>
+<p>​     比特率：单位时间内传送的二进制有效数据位数 bps<br>​               1440 * (8/12)= 960 bps<br>​     或：   8*120=960 bps</p>
 
             </div>
             <hr>
@@ -285,7 +309,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/R%E8%AF%AD%E8%A8%80/">R语言</a>
+                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
                     
                   </div>
                 
@@ -298,9 +322,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/03/%E4%BA%91%E8%AE%A1%E7%AE%97%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80chap1/">
+                      <a href="/2021/05/30/chap4%E5%AD%98%E5%82%A8%E5%99%A8/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">云计算技术基础chap1</span>
+                        <span class="hidden-mobile">chap4存储器</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -308,8 +332,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/26/%E7%A7%91%E7%9B%AE%E4%B8%89%E5%9B%9B%E8%A6%81%E7%82%B9/">
-                        <span class="hidden-mobile">科目三四要点</span>
+                      <a href="/2021/05/30/chap1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
+                        <span class="hidden-mobile">chap1计算机系统概论</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

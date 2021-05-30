@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Scarlett_D">
   <meta name="keywords" content="">
-  <title>R语言chap1 - Moneto3o</title>
+  <title>chap5输入输出系统 - Moneto3o</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="R语言chap1">
+            <span class="h2" id="subtitle" title="chap5输入输出系统">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-03-03 19:00" pubdate>
-        March 3, 2021 pm
+      <time datetime="2021-05-30 21:22" pubdate>
+        May 30, 2021 pm
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      474 字
+      2.2k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      25
        分钟
     </span>
   
@@ -224,57 +224,123 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">R语言chap1</h1>
+            <h1 style="display: none">chap5输入输出系统</h1>
             
             <div class="markdown-body">
-              <h2>第一章 R语言概述</h2>
+              <h1 id="第五章-输入输出系统"><a href="#第五章-输入输出系统" class="headerlink" title="第五章   输入输出系统"></a>第五章   输入输出系统</h1><h2 id="CHAP1-CONCEPT"><a href="#CHAP1-CONCEPT" class="headerlink" title="CHAP1 CONCEPT"></a>CHAP1 CONCEPT</h2><ol>
+<li>接口与总线连接</li>
+</ol>
+<img src="https://i.loli.net/2021/05/30/zeE6UaMjTZNdt9O.png" srcset="/img/loading.gif" style="zoom:50%;" />
 
-<h3>R简介</h3>
+<ol start="2">
+<li>接口电路</li>
+</ol>
+<img src="https://i.loli.net/2021/05/30/voVQHi3d47gjUNY.png" srcset="/img/loading.gif" style="zoom:50%;" />
 
-<p><strong>1、 R的功能：</strong></p>
-<p>​        绘图功能、数据分析</p>
-<p>​        功能的实现手段：工具（包、库）、编程语言</p>
-<p><strong>2、 百度百科：</strong></p>
-<p>​        R语言是一种用于<u>统计分析和绘图</u>的语言和操作环境</p>
-<p><strong>3、 延伸：</strong></p>
-<p>​        解释型的语言：</p>
-<p>​            <strong>逐行执行</strong>—Python（IPython、Shell）</p>
-<p>​            <strong>忽略底层，跨平台</strong>（Win、Linux—print(Hello)）</p>
-<p>​        编译型的语言：打包预编译后执行(统一打包—编译–dex) – 运行速度快</p>
-<p>​        R语言是一种<u>解释型</u>语言</p>
-<p>​        开源语言：Python(吉多)、Android(二次MIUI) — ios</p>
-<h3>R的演变</h3>
+<p>端口:  用于存放信息的、CPU可直接访问的寄存器、锁存器等。为区分信息，可分为数据端口、状态端口、控制端口等。<br>端口和接口的关系：若干个端口加上相应的控制逻辑组成接口。</p>
+<p>I/O端口及编址</p>
+<p>(1) 统一编址：<br>   内存、外设统一编址，用访存指令即可访问端口，不需专门的I/O指令<br>(2) 不统一编址：<br>  内存、外设单独编址，有专门的 I/O 指令</p>
+<ol start="3">
+<li>I/O 设备编址方式（端口编址）</li>
+</ol>
+<img src="https://i.loli.net/2021/05/30/W6P7kB2KdpGlDrs.png" srcset="/img/loading.gif" style="zoom: 67%;" />
 
-<p>​        Ｓ语言</p>
-<p>​        Ｒ　＋　Ｒ　(创始人 Ross Ihaka和Robert Gentleman)</p>
-<h3>R的特点――why we use it</h3>
+<ol start="4">
+<li><p>I/O设备与主机信息传送的控制方式</p>
+<p>(1)  程序查询方式</p>
+</li>
+</ol>
+<img src="https://i.loli.net/2021/05/30/yBnLCjkEwlavsqD.png" srcset="/img/loading.gif" style="zoom:67%;" />
 
-<p>数组、列表、向量、矩阵　　运算</p>
-<p>提供了非常丰富的画图工具（方法）</p>
-<p>进行数据的转换：</p>
-<p>​    JSON: {name:zhangsan,pwd:123}</p>
-<p>​    XML: HTML  <head></head></p>
-<p>​              XML  &lt;头&gt;&lt;/头&gt; <tou></tou></p>
-<p>​              <name>zhangsan</name> —DOM</p>
-<p>​    TEXT(HTML):</p>
-<p>登陆操作：</p>
-<p>​    Web端：获取用户输入的数据（name=zhangsan，pwd=123）</p>
-<p>​    服务器端：接收数据—数据类型（请求头）</p>
-<p>R工作原理：<strong>面向对象</strong></p>
-<h3>R的使用（R包、R开发工具）</h3>
+<p>​       (2) 程序中断方式</p>
+<p>​            ① 中断接口电路：</p>
+<p>​              中断源——中断请求电路<br>​              中断优先级——链式排队电路<br>​              中断向量（中断服务程序入口地址的地址）——设备编码器</p>
+<p>​            ② CPU 响应中断的条件和时间</p>
+<p>​              CPU 响应中断的条件：CPU内部允许中断触发器 EINT = 1<br>​              CPU响应中断的时间：每条指令结束时<br>​            （CPU在每条指令执行阶段的结束前发中断查询信号, 以获取I/O的中断请求）</p>
+<img src="https://i.loli.net/2021/05/30/ePcXfr2vJ9ZIK4D.png" srcset="/img/loading.gif" style="zoom:67%;" />
 
-<p><strong>1、完成R开发工具的使用—R核心：</strong></p>
-<p>​     Demo：实现一个婴儿的月龄和体重的案例—正相关性</p>
-<p>​     定义一个集合、列表等形式的变量，用于存储与月龄相关的十条数据；定义一个集合、列表等形式的变量，用于存储与体重相关的十条数据；</p>
-<p>​     R语言中，=的功能可以识别为赋值运算，正规的语法：<code>&lt;-</code></p>
-<p><img src="https://i.loli.net/2021/03/09/WX8Sjys1utGLvQp.png" srcset="/img/loading.gif"></p>
-<p>​    使用R的在线帮助文档：</p>
-<p><img src="https://i.loli.net/2021/03/09/hdH8GnQb74ygzwC.png" srcset="/img/loading.gif"></p>
-<p>​    R的工作空间：—自己实验</p>
-<p>​          当前的R的工作环境，在这个工作环境中包含R使用过程中定义的所有的变量和数据，并且与其    他的工作环境中的同名的变量和数据不冲突。</p>
-<p>​    <strong>获得工作空间：getwd()</strong></p>
-<p>​    <strong>设置工作空间：setwd(‘路径’)</strong></p>
-<p><img src="https://i.loli.net/2021/03/09/LYHo9WTkscyvKMl.png" srcset="/img/loading.gif"></p>
+<p>​        (3) DMA 方式</p>
+<p>① DMA 传送过程：预处理、数据传送、后处理</p>
+<p>预处理</p>
+<p>​     CPU通过<strong>几条输入输出指令</strong>预置如下信息:</p>
+<p>​     通知 DMA 控制逻辑传送方向（入/出（主存））</p>
+<p>​     设备地址         DMA 的 DAR，并启动设备</p>
+<p>​     主存地址         DMA 的 AR</p>
+<p>​     传送字数         DMA 的 WC</p>
+<p>DMA 传送过程(<u>DMA传送以数据块为单位，但每传送一个字需申请一次总线使用权</u>)</p>
+<p>​    接口电路完成（通常使用周期窃取或周期挪用法）</p>
+<p>后处理</p>
+<p>​    由CPU执行中断服务程序完成：<br>​    校验送入主存的数是否正确<br>​    是否继续用 DMA<br>​    测试传送过程是否正确，错则转诊断程序</p>
+<p>② DMA 传送过程示意</p>
+<img src="https://i.loli.net/2021/05/30/aulzcdCX3Oxt4wA.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<h2 id="PART2-EXERCISE"><a href="#PART2-EXERCISE" class="headerlink" title="PART2 EXERCISE"></a>PART2 EXERCISE</h2><ol>
+<li><p>微型机系统中，主机和高速硬盘进行数据交换一般采用__方式。<br>A.  程序查询      B．程序中断         C．<strong>DMA</strong><br>  答案：C</p>
+</li>
+<li><p>主机与设备传送数据时, 采用()，主机与设备是串行工作的。<br>A．<strong>程序查询方式</strong>    B．中断方式    C．DMA方式<br>  答案：A</p>
+</li>
+<li><p>主机与I/O设备传送数据时，采用()，CPU的效率最高。<br>A. 程序查询方式        B．中断方式         C．<strong>DMA方式</strong><br>  答案：C</p>
+</li>
+<li><p>中断发生时，程序计数器内容的保护和更新，是由()完成的<br>A．<strong>硬件自动</strong>        B．进栈指令和转移指令      C. 访存指令<br>答案：A</p>
+</li>
+<li><p>中断向量地址是()。<br>A．子程序入口地址<br>B．中断服务程序入口地址<br>C．<strong>中断服务程序入口地址的地址</strong><br>  答案：C</p>
+</li>
+<li><p>在中断响应周期，置“0”允许中断触发器是由_____完成的。<br>A. <strong>硬件自动</strong><br>B. 程序员在编制中断服务程序时设置的<br>C. 关中断指令<br>  答案：A</p>
+</li>
+<li><p>采用DMA方式传送数据时，每传送一个数据要占用____的时间。<br>A．一个指令周期     B．一个机器周期     <strong>C．一个存储周期</strong><br>  答案：C</p>
+</li>
+<li><p>周期挪用(窃取)方式常用于_____中。<br>A．<strong>直接存储器存取方式的输入输出</strong><br>B．直接程序传送方式的输入输出<br>C．程序中断方式的输入输出</p>
+<pre><code>答案：A</code></pre>
+</li>
+<li><p>DMA方式_____。<br>A. 既然能用于高速外围设备的信息传送，也就能代替中断方式<br>B. <strong>不能取代中断方式</strong><br>C. 也能向CPU请求中断处理数据传送<br>   答案：B</p>
+</li>
+<li><p>DMA方式中，周期窃取是窃取一个</p>
+<pre><code>A. **存取周期**     B．指令周期        C．CPU周期      D．总线周期</code></pre>
+<p>   答案：A</p>
+</li>
+<li><p>当采用_____输入操作情况下，除非计算机等待，否则无法传送数据给计算机。<br>A．<strong>程序查问方式</strong>    B．中断方式    C．DMA方式<br>   答案：A</p>
+</li>
+<li><p>I/O编址方式通常可分统一编址和不统一编址，_______。</p>
+<pre><code>A. 统一编址就是将I/O地址看作是存储器地址的一部分，可用专门的I/O指令对设备进行访问
+B. **不统一编址是指I/O地址和存储器地址是分开的，所以对I/O访问必须有专门的I/O指令**
+C. 统一编址是指I/O地址和存储器地址是分开的，所以可用
+    访存指令实现CPU对设备的访问
+ 答案：B</code></pre>
+</li>
+<li><p>某计算机的I/O设备采用异步串行传送方式传送字符信息，字符信息的格式为：一位起始位、七位数据位、一位检验位、一位停止位。若要求每秒钟传送480个字符，那么该I/O设备的数据传送速率应为()bps(位／秒)。</p>
+<pre><code> A．1200               B．**4800**          C．9600
+    答案：B</code></pre>
+</li>
+<li><p>以串行接口对ASCII码进行传送，带一位奇校验位和一位停止位，当波特率为9600波特时，字符传送率为()字符/秒</p>
+<pre><code> A．**960**         B．  1371            C. 480
+   答案：A</code></pre>
+</li>
+<li><p>I/O与主机交换信息的方式中，中断方式的特点是____。</p>
+<pre><code>A．CPU与设备串行工作，传送与主程序串行工作
+B．**CPU与设备并行工作，传送与主程序串行工作**
+C．CPU与设备串行工作，传送与主程序并行工作
+D.  CPU与设备并行工作，传送与主程序并行工作
+  答案：B</code></pre>
+</li>
+<li><p>I/O与主机交换信息的方式中，DMA方式的特点是_____。</p>
+<pre><code>A.  CPU与设备串行工作，传送与主程序串行工作
+B.  CPU与设备并行工作，传送与主程序串行工作
+C.  **CPU与设备并行工作，传送与主程序并行工作**
+    答案：C</code></pre>
+</li>
+<li><p>中断服务程序的最后一条指令是_____。</p>
+<pre><code> A．转移指令          B. 出栈指令           C. **中断返回指令**
+   答案：C</code></pre>
+</li>
+<li><p>DMA方式的接口电路中有程序中断部件，其作用是____。<br>A. 实现数据传送<br>B. 向CPU提出总线使用权<br>C. <strong>向CPU提出传输结束</strong><br>  答案：C</p>
+</li>
+</ol>
+<p>5.31.  假设某设备向CPU传送信息的最高频率是40 KHz（40000次/秒，而相应的中断处理程序其执行时间为40us，试问该外设是否可用程序中断方式与主机交换信息，为什么?</p>
+<p>解： 该设备每 1/ 40000 = 25 us向CPU传送一个数据，<br>        CPU中断处理程序需40 us<br>        可造成数据丢失，故不能可用程序中断方式与主机交换信息。</p>
+<p>例5.4 假设磁盘采用DMA方式与主机交换信息，其数据传输率为2MBps，而且DMA的预处理需1000个时钟周期，DMA完成传送后处理中断需500个时钟周期。如果平均传输的数据长度为4KB，问在硬盘工作时，50MHz的处理器需用多少时间比率进行DMA辅助操作（预处理和后处理）？</p>
+<p>解： 每秒传送 2MB/4KB = 500 （个数据块）<br>          辅助操作共需： （1000+500）* 500<br>                                       = 750000 （时钟周期）<br>          占用CPU时间：  750000 /（50*106）<br>                                       = 1.5%</p>
+<p>例1 (考研题)(8分)某计算机的CPU主频为500MHz，CPI为5（即执行每条指令平均需5个时钟周期）。假设某外设的数据传输率为0.5MB/s，采用中断方式与主机进行数据传送，以32位为传输单位，对应的中断服务程序包含18条指令，中断服务的其他开销相当于2条指令的执行时间。请回答下列问题，要求给出计算过程。<br>（1）在中断方式下，CPU用于该外设I/O的时间占整个CPU时间的百分比是多少？<br>（2）当该外设的数据传输率达到5MB/s时，改用DMA方式传送数据。假定每次DMA传送块大小为5000B，且DMA预处理和后处理的总开销为500个时钟周期，则CPU用于该外设I/O的时间占整个CPU时间的百分比是多少？（假设DMA与CPU之间没有访存冲突）。</p>
+<p>解：(1) 在中断方式下，CPU每次用于数据传送的时钟周期数：<br>             5×18+5×2=100<br>  为达到外设0.5MB/s的数据传输速度，外设每秒申请中断次数：<br>             0.5M/(32/8)=125000<br>  每秒钟用于中断的开销：<br>             100×125000=12.5M个时钟周期<br>  CPU用于外设I/O的时间占整个CPU时间的百分比：<br>             12.5M/500M=2.5%<br>(2) 外设数据传输率提高到5MB/s时，每秒钟需产生的DMA次数：<br>           5MB/5000B=1000<br>  CPU用于DMA处理的总开销：<br>           1000×500=0.5 M个时钟周期<br>  CPU用于外设I/O的时间占整个CPU时间的百分比:<br>               0.5M/500M=0.1%    </p>
 
             </div>
             <hr>
@@ -285,7 +351,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/R%E8%AF%AD%E8%A8%80/">R语言</a>
+                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
                     
                   </div>
                 
@@ -298,18 +364,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/03/%E4%BA%91%E8%AE%A1%E7%AE%97%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80chap1/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">云计算技术基础chap1</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/26/%E7%A7%91%E7%9B%AE%E4%B8%89%E5%9B%9B%E8%A6%81%E7%82%B9/">
-                        <span class="hidden-mobile">科目三四要点</span>
+                      <a href="/2021/05/30/chap4%E5%AD%98%E5%82%A8%E5%99%A8/">
+                        <span class="hidden-mobile">chap4存储器</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

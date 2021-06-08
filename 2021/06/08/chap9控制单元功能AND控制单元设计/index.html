@@ -1,0 +1,668 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Scarlett_D">
+  <meta name="keywords" content="">
+  <title>chap9控制单元功能AND控制单元设计 - Moneto3o</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"moneto3o.github.io","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Moneto3o</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="chap9控制单元功能AND控制单元设计">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-06-08 12:55" pubdate>
+        June 8, 2021 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      38
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">chap9控制单元功能AND控制单元设计</h1>
+            
+            <div class="markdown-body">
+              <h1 id="第九章-控制单元功能-第十章-控制单元设计"><a href="#第九章-控制单元功能-第十章-控制单元设计" class="headerlink" title="第九章 控制单元功能   第十章 控制单元设计"></a>第九章 控制单元功能   第十章 控制单元设计</h1><h2 id="CHAP1-CONCEPT"><a href="#CHAP1-CONCEPT" class="headerlink" title="CHAP1 CONCEPT"></a>CHAP1 CONCEPT</h2><ol>
+<li><p>多级时序<br>指令周期、机器周期、 时钟周期（节拍、状态） </p>
+<p><strong>机器周期、节拍（状态）组成多级时序系统</strong></p>
+<p>一个指令周期包含若干个机器周期</p>
+<p>一个机器周期包含若干个时钟周期（节拍）</p>
+</li>
+</ol>
+<img src="https://i.loli.net/2021/06/01/6pmFnVoDXuBLOte.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<ol start="2">
+<li><p>机器速度与机器主频的关系</p>
+<p>在机器周期所含时钟周期数 相同 的前提下，<br>两机 平均指令执行速度之比  等于 两机主频之比</p>
+</li>
+</ol>
+<img src="https://i.loli.net/2021/06/01/owgKaDGJme4sfOn.png" srcset="/img/loading.gif" style="zoom: 67%;" />
+
+<ol start="3">
+<li>指令的微操作序列和控制信号<br>（指令周期流程图和相应的微操作控制信号序列）</li>
+</ol>
+<img src="https://i.loli.net/2021/06/01/2GxCElrFvacHymD.png" srcset="/img/loading.gif" style="zoom:80%;" />
+
+<img src="https://i.loli.net/2021/06/01/4bMea6PTtH51nNK.png" srcset="/img/loading.gif" style="zoom:73%;" />
+
+<ol start="4">
+<li><p>理解组合逻辑控制器设计</p>
+</li>
+<li><p>理解微程序控制单元的基本框图</p>
+<p>至 CPU 内部和系统总线的控制信号</p>
+ <img src="https://i.loli.net/2021/06/01/gPZ9zohLat5QDrK.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<p>微指令基本格式</p>
+<img src="https://i.loli.net/2021/06/01/WKu74JhpkDetwzT.png" srcset="/img/loading.gif" style="zoom:67%;" />
+</li>
+<li><p>控存结构</p>
+</li>
+</ol>
+<img src="https://i.loli.net/2021/06/01/kWLgaB8AzdcwiHV.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<ol start="7">
+<li><p>水平型微指令的编码方式（控制方式）</p>
+<p>（1）直接编码（直接控制）方式</p>
+</li>
+</ol>
+<img src="https://i.loli.net/2021/06/01/m7thnWFPSdGjEBH.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<p> （2）字段直接编码方式</p>
+<img src="https://i.loli.net/2021/06/01/5WVEnbimzYogdaQ.png" srcset="/img/loading.gif" style="zoom: 67%;" />
+
+<p> （3）字段间接编码方式</p>
+<img src="https://i.loli.net/2021/06/01/Au3C582saoDqMHW.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<p> （4）混合编码</p>
+<img src="https://i.loli.net/2021/06/01/EJzMqwDpU8rBbRN.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<img src="https://i.loli.net/2021/06/08/fmP6YWaAUjd5ZKn.png" srcset="/img/loading.gif" style="zoom: 67%;" />
+
+<img src="https://i.loli.net/2021/06/08/6bNdGLJaAkVC79K.png" srcset="/img/loading.gif" style="zoom:69%;" />
+
+<img src="https://i.loli.net/2021/06/08/Lufm63nb9OkNUZ8.png" srcset="/img/loading.gif" style="zoom:69%;" />
+
+<img src="https://i.loli.net/2021/06/08/h9dYP6SHXfZ4mcF.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<h2 id="CHAP2-EXERCISE"><a href="#CHAP2-EXERCISE" class="headerlink" title="CHAP2 EXERCISE"></a>CHAP2 EXERCISE</h2><p>选择题</p>
+<ol>
+<li><p>在下列说法中——是错误的_____</p>
+<p>A．<strong>计算机的速度完全取决于主频</strong></p>
+<p>B. 计算机的速度不完全取决于主频</p>
+<p>C．计算机的速度与主频、机器周期内平均含时钟周期数及机器的平均指令执行速度有关<br>答案：A</p>
+</li>
+<li><p>一个节拍信号的宽度是指______。</p>
+<p>A．指令周期          B．机器周期       C．<strong>时钟周期</strong><br>答案：C</p>
+</li>
+<li><p>由于CPU内部操作的速度较快，而CPU访问一次存储器的时间较长，因此机器周期通常由_____来确定。</p>
+<p>A. 指令周期         B．<strong>存取周期</strong>         C.  间址周期<br>答案：B</p>
+</li>
+<li><p>在取指令操作之后，程序计数器中存放的是_____。</p>
+<p>A. 当前指令的地址     B. 程序中指令的数量     C. <strong>下一条指令的地址</strong><br>答案：C</p>
+</li>
+<li><p>下列说法中_____ 是正确的。</p>
+<p>A. 加法指令的执行周期一定要访存</p>
+<p>B. 加法指令的执行周期一定不访存</p>
+<p>C. <strong>指令的地址码给出存储器地址的加法指令，在执行周期一定访存</strong><br>答案：C</p>
+</li>
+<li><p>在微程序控制器中，机器指令与微指令的关系是_____。</p>
+<p>A．每一条机器指令由一条微指令来执行</p>
+<p>B.   <strong>每一条机器指令由若干条微指令组成的微程序来解释执行</strong></p>
+<p>C.  若干条机器指令组成的程序可由一个微程序来执行<br>答案：B</p>
+</li>
+<li><p>在微程序控制器中, 控制部件向执行部件发出的某个控制信号称为__。</p>
+<p>A．微指令        B．微操作        C．<strong>微命令</strong><br>答案：C</p>
+</li>
+<li><p>微指令操作控制字段的每一位代表一个控制信号，这种微程序的控制(编码)方式是______。</p>
+<p>A.字段直接编码        B．<strong>直接编码</strong>        C.混合编码<br>答案：B</p>
+</li>
+<li><p>在控制器的控制信号中，相容的信号是______的信号</p>
+<p>A. 可以相互替代       B．可以相继出现        C．<strong>可以同时出现</strong><br>答案：C</p>
+</li>
+<li><p>微程序放在_____中。</p>
+<p>A．存储器控制器         B．<strong>控制存储器</strong>        C．主存储器<br>答案：B</p>
+</li>
+</ol>
+<p><code>微命令 = 微操作命令 = 操作控制信号 </code></p>
+<p>作业题 9.1 9.5 9.11(1) 10.2(1) 10.4-1 10.15</p>
+<p><img src="https://i.loli.net/2021/05/26/ylzesDk1YIFT7bA.png" srcset="/img/loading.gif" style="zoom:15%;" />9.1 设CPU内有这些部件： PC、 IR、 MAR、MDR、 AC、 CU。</p>
+<p>1） 写出取指周期的全部微操作。</p>
+<p> PC-&gt;MAR; 1-&gt;R; </p>
+<p>M(MAR)-&gt;MDR; MDR-&gt;IR;</p>
+<p>OP(IR)-&gt;CU; </p>
+<p>(PC)+1-&gt;PC;</p>
+<p>2） 写出减法指令“SUB X”、 取数指令“STA X”（X<br>均为主存地址） 在执行阶段所需的全部微操作。</p>
+<p>SUB X :</p>
+<p>AD(IR)-&gt;MAR; </p>
+<p>1-&gt;R; M(MAR)-&gt;MDR;</p>
+<p>(AC)-(MDR)-&gt;AC;</p>
+<p>STA X : AD(IR)-&gt;MAR; </p>
+<p>1-&gt;W; AC-&gt;MDR;</p>
+<p>MDR-&gt;M(MAR)</p>
+<p> 3） 当上述指令为间接寻址时， 写出执行这些指令所需的全部微操作。</p>
+<p>间接寻址时， 比直接寻址多一个间址周期：</p>
+<p>AD(IR)-&gt;MAR; </p>
+<p>1-&gt;R; M(MAR)-&gt;MDR;</p>
+<p>MDR-&gt;AD(IR);</p>
+<p>4） 写出无条件转移指令“JMP Y”和结果溢出则转<br>指令“BAO Y”在执行阶段所需的全部微操作。</p>
+<p>JMP Y : AD(IR)-&gt;PC</p>
+<p>BAO Y: O ·AD(IR)+O·(PC)-&gt;PC</p>
+<p><img src="https://i.loli.net/2021/05/26/ylzesDk1YIFT7bA.png" srcset="/img/loading.gif" style="zoom:15%;" />9.5 设机器A的CPU主频为8MHz， 机器周期含4个时钟周期， 且该机的平均指令执行速度是0.4MIPS， 试求该机的平均指令周期和机器周期， 每个指令周期中含几个机器周期？ 如果机器B的CPU主频为12MHz,且机器周期也含4个时钟周期， 试问B机的平均指令执行速度为多少MIPS</p>
+<p>1） 由机器A的主频和平均指令执行速度， 可知平均指令时钟周期数： 8/0.4=20</p>
+<p>每条指令所含平均机器周期： 20/4 =5</p>
+<p>机器周期： 4×1/8M=0.5us;</p>
+<p>2)B机指令执行速度： 12M/(4×5)=0.6MIPS</p>
+<p><img src="https://i.loli.net/2021/05/26/ylzesDk1YIFT7bA.png" srcset="/img/loading.gif" style="zoom:15%;" />9.11(1) 设CPU内部结构如图9.4所示， 此外还设有B、C、 D、 E、 H、 L六个寄存器， 它们各自的输入和输出端都与内部总线相通，并分别受控制信号控制（如Bi为寄存器B的输入控制； Bo为B的输出控制） 。 要求从取指令开始， 写出完成下列指令所需的全部微操作和控制信号。</p>
+<img src="https://i.loli.net/2021/06/08/sfaG6u7OXrxSkRq.png" srcset="/img/loading.gif" style="zoom: 44%;" />
+
+<ol>
+<li>ADD B, C ((B)+(C) -&gt; B)</li>
+</ol>
+<p>取指： PC→BUS → MAR PCo， MARi</p>
+<p>1 → R 通过控制总线向主存发读命令</p>
+<p>M(MAR) →MDR MARo, MDRi</p>
+<p>MDR →BUS →IR MDRo, IRi</p>
+<p>OP(IR) →CU 操作码送至CU</p>
+<p>PC+1 →PC PC内容+1</p>
+<p>执行： B →BUS →Y Bo, Yi</p>
+<p>C →BUS →ALU Co, ALUi</p>
+<p>Y+BUS →Z Yo, Zi</p>
+<p>Z →BUS →B Zo, Bi</p>
+<ol start="2">
+<li>SUB A, H ((AC)-(H) →AC)</li>
+</ol>
+<p>取指： PC→BUS → MAR PCo， MARi</p>
+<p>1 → R 通过控制总线向主存发读命令</p>
+<p>M(MAR) →MDR MARo, MDRi</p>
+<p>MDR →BUS →IR MDRo, IRi</p>
+<p>OP(IR) →CU 操作码送至CU</p>
+<p>PC+1 →PC PC内容+1</p>
+<p>执行： AC →BUS →Y ACo, Yi</p>
+<p>H →BUS →ALU Ho, ALUi</p>
+<p>Y-BUS →Z Yo, Zi</p>
+<p>Z →BUS →AC Zo, ACi</p>
+<p>9.6 设某机主频为8MHz，每个机器周期平均含2个时钟周期，每条指令平均有4个机器周期，试问该机的平均指令执行速度为多少MIPS？若机器主频不变，但每个机器周期平均含4个时钟周期，每条指令平均有4个机器周期，则该机的平均指令执行速度又是多少MIPS？由此可得出什么结论？</p>
+<p>解：</p>
+<p>​    时钟周期=1/8MHz=0.125×10^-6 =125ns<br>​    机器周期=125ns×2=250ns<br>​    平均指令周期=250ns×4=1000ns<br>​    平均指令执行速度=1/1000ns =1 MIPS<br>​    当参数改变后：<br>​    机器周期=125ns×4=500ns<br>​    平均指令周期=500ns×4=2000ns<br>​    平均指令执行速度=1/2000s=0.5 MIPS </p>
+<p>结论：两个主频相同的机器，执行速度不一定一样。</p>
+<p>例1 CPU结构如图所示，其中有一个累加寄存器AC，一个状态条件寄存器，各部分之间的连线表示数据通路，箭头表示信息传送方向。<br>  (1) 标明图中四个寄存器的名称。<br>  (2) 简述指令从主存取到控制器的数据通路。<br>  (3) 简述数据在运算器和主存之间进行存/取访问的数据通路。 </p>
+<img src="https://i.loli.net/2021/06/01/WXczNkailGrAU1j.png" srcset="/img/loading.gif" style="zoom: 44%;" />
+
+<p>解： </p>
+<p> (1)<br> a为主存数据缓冲寄存器 MDR ，<br> b为指令寄存器 IR ，<br> c为主存地址寄存器 MAR，<br> d为程序计数器PC。</p>
+<p> (2) 主存 M → MDR → IR → 操作控制器。<br> (3) 存储器读：<br>      M →MDR →ALU →AC<br>    存储器写：<br>      AC →MDR →M</p>
+<p>例2 下图所示是双总线结构的机器。图中IR为指令寄存器，PC为程序计数器，MAR为存储器地址寄存器，M为主存(受R/W信号控制)，MDR为存储器数据寄存器。R0、R1、 R2、R3、X、Y均为寄存器，ALU由正、负控制信号决定完成何种操作，控制信号G控制一个门电路。此外，线上标注有控制信号，如Yi表示寄存器Y的输入控制信号，R1o表示寄存器R1的输出控制信号，未标字符的线为直通线，不受控制。<br>    ADD R2，R0指令完成(R2)+(R0) →R2的操作，画出其指令周期信息流程图(假设指令的地址巳放在PC中)，并列出相应的微操作控制信号序列。</p>
+<img src="https://i.loli.net/2021/06/01/tFPUZB8pcLiH5Kb.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<p>解: </p>
+<img src="https://i.loli.net/2021/06/01/uaZiS2gxdfKbclj.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<p>9.13 设CPU内部结构如图9.4所示，此外还设有R1~R4四个寄存器，它们各自的输入和输出端都与内部总线相通，并分别受控制信号控制（如R2i为寄存器R2的输入控制；R2O为R2的输出控制）。要求从取指令开始，写出完成下列指令所需的全部微操作和控制信号。<br>ADD R2, @R4<br>功能: (R2)+((R4))→R2</p>
+<img src="https://i.loli.net/2021/06/01/hOGQj58LaXoEIPr.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<img src="https://i.loli.net/2021/06/01/rFK1UNuOw9HR3aS.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<img src="https://i.loli.net/2021/06/01/YarLdstMRhX2mW5.png" srcset="/img/loading.gif" style="zoom:80%;" />
+
+<img src="https://i.loli.net/2021/06/01/cVFltq8nHMaeUjp.png" srcset="/img/loading.gif" style="zoom:80%;" />
+
+<p>例5 已知某机有80条指令，平均每条指令由12条微指令组成，其中有一条取指微指令是所有指令公有的，设微指令长度为32位，请算出控制存储器容量。</p>
+<p>解：    共有   1 + 80* 11  =  881  条微指令<br>            控存容量： 881* 32 位           </p>
+<p>例6 某机的微指令格式中，共有10个控制字段，每个字段可分别激活4、4、3、11、9、16、7、1、8、22种控制信号。试问采用字段直接编码方式和直接编码(控制)方式，微指令的操作控制字段各取几位?</p>
+<p>解： 直接编码：85位<br>         字段字节编码：3+3+2+4+4+5+3+1+4+5 = 34 位 </p>
+<p>例7  某机采用微程序控制器，已知每一条机器指令的执行过程均可分解成8条微指令组成的微程序，该机指令系统采用6位定长操作码格式。<br>问控制存储器至少能容纳多少条微指令？</p>
+<p>解：该机指令系统共有 26=64  条机器指令，所以控存至少能容纳：<br>                            64*8=512 条微指令</p>
+<p>例8 某微程序控制器中，采用水平型直接控制(编码)方式微指令格式，后继微指令地址由微指令的下地址字段给出。已知机器共有22个微命令、5个互斥的可判定的外部条件，控制存储器的容量为128*32位。设计微指令格式。</p>
+<p>解：(1)   操作控制字段 22位，采用直接编码方式<br>               下地址   27=128  ——7位，<br>                5位互斥判定条件编码成3位</p>
+<img src="https://i.loli.net/2021/06/01/ySVHdEc73JQsBZ5.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<p>例9 某机共有55个微操作控制信号，构成5个相斥类的微命令组，各组分别包含4、7、8、12和24个微命令。已知可判定的外部条件有CY和ZF两个，微指令字长30位。<br>    (1) 给出采用断定方式的水平型微指令格式。<br>    (2)指出控制存储器的容量。</p>
+<img src="https://i.loli.net/2021/06/01/lLCHVWQIO3STMxp.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<p><img src="https://i.loli.net/2021/05/26/ylzesDk1YIFT7bA.png" srcset="/img/loading.gif" style="zoom:15%;" />10.2 写出完成下列指令的微操作及节拍安排（包括取指操作）。 </p>
+<p>  （1）指令ADD R1，X完成将R1寄存器的内容和主存X单元的内容相加，结果存于R1的操作。 </p>
+<p>  （2）指令ISZ X完成将主存X单元的内容增1，并根据其结果若为0，则跳过下一条指令</p>
+<img src="https://i.loli.net/2021/06/08/k2DKCQv1XEaBSMV.png" srcset="/img/loading.gif" style="zoom:50%;" />
+
+<img src="https://i.loli.net/2021/06/08/TwgOAafJHBylWn4.png" srcset="/img/loading.gif" style="zoom:50%;" />
+
+<img src="https://i.loli.net/2021/06/08/OQU1pTRkM7YNbd9.png" srcset="/img/loading.gif" style="zoom:50%;" />
+
+<p><img src="https://i.loli.net/2021/05/26/ylzesDk1YIFT7bA.png" srcset="/img/loading.gif" style="zoom:15%;" />10.4 在单总线结构的计算机中,用该总线连接了指令寄存器IR、程序计数器PC、存储器地址寄存器MAR、存储器数据寄存器MDR、通用寄存器 </p>
+<p>  <img src="https://uploadfiles.nowcoder.com/images/20180517/7574500_1526546889326_A70F72A098ADB237FCDDED6540B4EFF7" srcset="/img/loading.gif" alt="img">的输入和输出端。ALU的两个输入端分別与总线和寄存器Y的输出端相连,ALU的输出端与寄存器Z的输人端相连。Y的输入端与总线连接,Z的输出端与总线连接。该机有下列指令:  </p>
+<p>  <img src="https://uploadfiles.nowcoder.com/images/20180517/7574500_1526547089842_DD88D09489F8461DC20EBD8FF4BCD8EE" srcset="/img/loading.gif" alt="img"><br> 写出控制器执行上还指令的微操作及节拍安排。</p>
+<img src="https://i.loli.net/2021/06/08/a36GMULgv2bw8H4.png" srcset="/img/loading.gif" style="zoom:50%;" />
+
+<img src="https://i.loli.net/2021/06/08/ztlYIsRk36KfmVb.png" srcset="/img/loading.gif" style="zoom:50%;" />
+
+<img src="https://i.loli.net/2021/06/08/NtT5PgvLHy4cbhj.png" srcset="/img/loading.gif" style="zoom:50%;" />
+
+<p><img src="https://i.loli.net/2021/05/26/ylzesDk1YIFT7bA.png" srcset="/img/loading.gif" style="zoom:15%;" />10.15  设控制存储器的容量为512*48位，微程序可在整个控存空间实现转移，而控制微程序转移的条件共有4个（采用直接控制），微指令格式如下：</p>
+<img src="https://i.loli.net/2021/06/01/MALfqIikUBZeT5O.png" srcset="/img/loading.gif" style="zoom: 67%;" />
+
+<p>例10 假设某计算机的运算器框图如图所示，其中ALU为16位的加法器，SA 、SB为16位暂存器，4个通用寄存器由D触发器组成，Q端输出，其读写控制如下表所示：</p>
+<img src="https://i.loli.net/2021/06/01/HjvtcSGhJmyFeAr.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<p>要求：（1）设计微指令格式。<br>           （2）画出ADD，SUB两条指令微程序流程图。</p>
+ <img src="https://i.loli.net/2021/06/01/7tkdfa3zXNmlCR8.png" srcset="/img/loading.gif" style="zoom: 60%;" />
+
+<img src="https://i.loli.net/2021/06/01/bBi1ECkFhupwL9n.png" srcset="/img/loading.gif" style="zoom: 67%;" />
+
+<img src="https://i.loli.net/2021/06/01/hveXqlyc2mIFLks.png" srcset="/img/loading.gif" style="zoom: 67%;" />
+
+<p>例11 运算器结构如图所示，R1 ，R2，R3 是三个寄存器，A和B是两个三选一的多路开关，通路的选择由AS0 ,AS1 和BS0 ，BS1端控制，例如BS0BS1 = 11时，选择R3 ，BS0BS1 = 01时，选择R1……，ALU是算术 / 逻辑单元。S1S2为它的两个操作控制端。其功能如下：<br>           S1S2 = 00时，ALU输出 = A<br>           S1S2 = 01时，ALU输出 = A + B<br>            S1S2 = 10时，ALU输出 = A – B<br>           S1S2 = 11时，ALU输出 = A⊕B<br>    请设计控制运算器通路的微指令格式控制字段。   （白中英书） </p>
+<p>解： 采用水平微指令格式，且采用直接控制方式</p>
+<img src="https://i.loli.net/2021/06/01/RLzUWPaiEYgt9d1.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<img src="https://i.loli.net/2021/06/01/UdFXW4GcAsheVZq.png" srcset="/img/loading.gif" style="zoom: 50%;" />
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/06/08/chap8CPU%E7%9A%84%E7%BB%93%E6%9E%84%E5%92%8C%E5%8A%9F%E8%83%BD/">
+                        <span class="hidden-mobile">chap8CPU的结构和功能</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

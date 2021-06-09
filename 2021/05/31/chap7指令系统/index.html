@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      2.1k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      24
        分钟
     </span>
   
@@ -227,12 +227,127 @@
             <h1 style="display: none">chap7指令系统</h1>
             
             <div class="markdown-body">
-              
+              <h1 id="第七章-指令系统"><a href="#第七章-指令系统" class="headerlink" title="第七章  指令系统"></a>第七章  指令系统</h1><h2 id="CHAP1-CENCEPT"><a href="#CHAP1-CENCEPT" class="headerlink" title="CHAP1 CENCEPT"></a>CHAP1 CENCEPT</h2><ol>
+<li>机器指令格式、各段的含义</li>
+</ol>
+<img src="https://i.loli.net/2021/05/31/K9VFviQZdxEqfu3.png" srcset="/img/loading.gif" style="zoom: 50%;" />
+
+<ol start="2">
+<li><p>掌握几种常见的指令<br>如：LDA、STA、LDR、STR、MOV、ADD、SUB、JMP、JZ、JC、JO等的操作流程</p>
+</li>
+<li><p>寻址方式<br>指令寻址 ：顺序寻址、跳跃寻址<br>数据寻址（10种寻址方式）<br>  立即寻址、直接寻址、隐含寻址、寄存器寻址、间接寻址、<br>  寄存器间接寻址、基址寻址、变址寻址、相对寻址、<br>  堆栈寻址</p>
+<p>各寻址方式的EA = ？、操作数所在位置、寻址流程</p>
+</li>
+</ol>
+<h2 id="CHAP2-EXERCISE"><a href="#CHAP2-EXERCISE" class="headerlink" title="CHAP2 EXERCISE"></a>CHAP2 EXERCISE</h2><p>选择题</p>
+<ol>
+<li><p>指令系统中采用不同寻址方式的目的主要是</p>
+<p>A．可降低指令译码难度</p>
+<p>B．<strong>缩短指令字长，扩大寻址空间，提高编程灵活性</strong></p>
+<p>C．实现程序控制<br>答案：B</p>
+</li>
+<li><p>在一地址指令中，为完成两个数的算术运算，除地址译码指明的一个操作数外，另一个操作数常采用()<br>A. 堆栈寻址方式    B．立即寻地址方式       C．<strong>隐含寻址方式</strong><br>答案：C</p>
+</li>
+<li><p>寄存器间接寻址方式中，操作数在()中。</p>
+<p>A. 通用寄存器             B. 堆栈           C. <strong>主存单元</strong><br>答案：C</p>
+</li>
+<li><p>变址寻址方式中，操作数的有效地址是_____<br>A．基址寄存器内容加上形式地址(位移量)<br>B．程序计数器内容加上形式地址<br>C．<strong>变址寄存器内容加上形式地址</strong><br>答案：C</p>
+</li>
+<li><p>堆栈寻址方式中，设A为累加器，SP为堆栈指示器，Msp为SP指示的栈顶单元。如果进栈操作的动作顺序是(A)→Msp，(SP)-1→ SP，那么出栈操作的动作顺序应为</p>
+<p>A.  (Msp) → (A)， (SP)+l → SP         </p>
+<p>B．**(SP)+1 → SP，(Msp) → A**</p>
+<p>C.  (SP)-1 → SP， (Msp) → A<br>答案：B</p>
+</li>
+<li><p>设变址寄存器为X，形式地址为D，某机具有先变址再间址的寻址方式．则这种寻址方式的有效地址为_____。</p>
+<p>A.  EA= (x) + D        B.  EA = (x) + (D)       C.  <strong>EA＝((x) + D)</strong><br>答案：C</p>
+</li>
+<li><p>设变址寄存器为X，形式地址为D，某机具有先间址后变址的寻址方式，则这种寻址方式的有效地址为_____</p>
+<p>A.  EA= (x) + D        B.  <strong>EA = (x) + (D)</strong>       C.  EA＝((x) + D)<br>答案：B</p>
+</li>
+<li><p>指令的寻址方式有顺序和跳跃两种，采用跳跃寻址方式可以实现</p>
+<p>A.   程序浮动</p>
+<p>B．程序的无条件转移和浮动</p>
+<p>C．<strong>程序的条件转移和无条件转移</strong><br>答案：C</p>
+</li>
+<li><p>设相对寻址的转移指令占两个字节，第一字节是操作码，第二字节是相对位移量(可正可负)，则转移的地址范围是_____。<br>A.  255           B．<strong>256</strong>       C.  254<br>答案：B</p>
+</li>
+<li><p>设相对寻址的转移指令占两个字节，第一字节是操作码，第二字节是相对位移量(用补码表示)，若CPU每当从存储器取出一个字节时，即自动完成 (PC)+1→PC，设当前PC的内容为2000H，要求转移到2008H地址，则该转移指令第二字节的内容应为_____。</p>
+<p>A．08H           B．<strong>06H</strong>          C.  0AH<br>答案：B  </p>
+</li>
+<li><p>直接、间接、立即三种方式指令执行速度，由快至慢的排序是___<br>答案：<strong>立即、直接、间接</strong></p>
+</li>
+<li><p>为了缩短指令中地址码的位数，应采用()寻址。</p>
+<p>A．立即数          B．<strong>寄存器</strong>        C．直接<br>答案：B</p>
+</li>
+<li><p>在指令格式设计中，采用扩展操作码的目的是_____。</p>
+<p>A．增加指令长度         B．增加寻址空间        C．<strong>增加指令数量</strong><br>答案：C</p>
+</li>
+<li><p>设机器字长为16位，存储器按字编址，对于单字长指令而言，读取该指令后，PC值自动加___</p>
+<p>A．  <strong>1</strong>                B．2             C．4<br>答案：A</p>
+</li>
+<li><p>设机器字长为16位，存储器按字节编址，CPU读取一条单字长指令后，PC值自动加</p>
+<p>A．  1                B．<strong>2</strong>             C．4<br>答案：B</p>
+</li>
+<li><p>下列三种类型的指令，执行时间最长。</p>
+<p>A. RR型           B.  RS型         C．<strong>SS型</strong><br>答案：C</p>
+</li>
+<li><p>在下列寻址方式中，_____寻址方式需要先计算，再访问主存。</p>
+<p>A．立即        B．<strong>变址</strong>         C. 间接<br>答案：B</p>
+</li>
+</ol>
+<p>作业题 7.14 7.16</p>
+<p><img src="https://i.loli.net/2021/05/26/ylzesDk1YIFT7bA.png" srcset="/img/loading.gif" style="zoom:15%;" />7.14  设相对寻址的转移指令占2个字节，第一字节是操作码，第二字节为相对位移量，用补码表示。假设当前转移指令第一字节所在的地址为2000H，且CPU每取出一个字节便自动完成（PC+1）→ PC的操作，试问当执行“JMP  * +8”和“JMP  * -9 ”指令时，转移指令第二字节的内容各为多少？</p>
+<p>解：</p>
+<p>​    (1)   JMP  * +8<br>​    指令第二字节内容为:<br>​    2008H – 2002H =06 H</p>
+<p>​    (2) JMP  * -9<br>​    指令第二字节内容为:<br>​    2000H -9H – 2002H = - B H<br>​    (-BH) 补 = F5H</p>
+<img src="https://i.loli.net/2021/05/31/pAJodYu9VjQZvx8.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<p><img src="https://i.loli.net/2021/05/26/ylzesDk1YIFT7bA.png" srcset="/img/loading.gif" style="zoom:15%;" />7.16  某机主存容量为4M ×16位，且存储字长等于指令字长，若该机指令系统能完成97种操作，操作码位数固定，且具有直接、间接、变址、基址、相对、立即等六种寻址方式。<br>    (1)画出一地址指令格式并指出各字段的作用。<br>    (2)该指令直接寻址的最大范围。<br>    (3)一次间址和多次间址的寻址范围。<br>    (4)立即数的范围(十进制数表示)。<br>    (5)相对寻址的位移量(十进制数表示)。<br>    (6)上述六种寻址方式的指令哪一种执行时间最短？哪一种最长?哪一种便于用户编制处理数组问题的程序?哪一种便于程序浮动?<br>    (7)如何修改指令格式，使指令的直接寻址范围可扩大到4M?<br>解：</p>
+<p> (1) 一地址指令格式   </p>
+<img src="https://i.loli.net/2021/05/31/lWDmtSFIQ49HZie.png" srcset="/img/loading.gif" style="zoom:50%;" />
+
+<p>​      OP 操作码字段，共7位，可反映97种操作；<br>​      M 寻址方式特征字段，共3位，可反映6种寻址方式；<br>​      A形式地址字段，共16-7-3＝6位。</p>
+<p> (2)直接寻址的最大范围为26＝64</p>
+<p> (3)由于存储字长为16位，故一次间址的寻址范围为216。</p>
+<p> 若多次间址，需用存储字的最高位来区别是否继续间接寻址，故寻址范围为215。</p>
+<p> (4)立即数的范围是 -32 ~ +31 (有符号数) 或 0~63 (无符号数)。</p>
+<p> (5)相对寻址的位移量为 -32 ~ +31。</p>
+<p> (6)上述六种寻址方式中，<br>       立即寻址的指令执行时间最短；<br>       间接寻址执行时间最长；<br>      变址寻址便于用户编制处理数组问题的程序。<br>      相对寻址利于程序浮动。    </p>
+<p> (7) 若指令的格式改为双字指令。<br>       其中OP 7位，M 3位，A1 6位，A2 16位，即指令的地址字段共16+6=22位，则指令的直接寻址范围可扩大到4M。    </p>
+<img src="https://i.loli.net/2021/05/31/1Wo2kPuCR4hV5np.png" srcset="/img/loading.gif" style="zoom:50%;" />
+
+<p>例1  一种一地址指令的格式如下所示。 其中I为间址特征，X为寻址模式，A为形式地址。设R为通用寄存器，也可作为变址寄存器。在表中填入适当的寻址方式名称。</p>
+<img src="https://i.loli.net/2021/05/31/4KSlRpqeFVmk6vJ.png" srcset="/img/loading.gif" style="zoom: 80%;" />
+
+<p>例2 指令格式结构如下所示，试分析指令格式及寻址方式特点。</p>
+<img src="https://i.loli.net/2021/05/31/kXHMaPoY71E2qdj.png" srcset="/img/loading.gif" style="zoom: 50%;" />
+
+<p>解：</p>
+<p>​    指令格式及寻址方式特点如下：<br>​    ① 双字长二地址指令；<br>​    ② 操作码OP可指定 26=64条指令；<br>​    ③ RS型指令，两个操作数一个在寄存器中（16个寄存器之一，由指令中源寄存器字段指出），为寄存器寻址方式；另一个在存储器中，为变址寻址方式；<br>​    ④ 有效地址通过变址求得：E=（变址寄存器）+ D，变址寄存器可有16个，由指令中变址寄存器字段指出。</p>
+<p>例3 一条双字长的取数指令（LDA）存于存储器的100和101单元，其中第一个字为操作码和寻址特征M，第二个字为形式地址。假设PC当前值为100，变址寄存器XR的内容为100，基址寄存器的内容为200，存储器各单元的内容如下图所示。写出在下列寻址方式中，取数指令执行结束后，累加器AC的内容。 </p>
+<img src="https://i.loli.net/2021/05/31/dMxmRr8opXJDcPb.png" srcset="/img/loading.gif" style="zoom:80%;" />
+
+<p>例4 某机指令格式如下图所示：</p>
+<img src="https://i.loli.net/2021/05/31/XbVLx2AGmSzT8R9.png" srcset="/img/loading.gif" style="zoom:80%;" />
+
+<p>图中I为间址特征位 (I=0，直接寻址；I=1，一次间接寻址)。假设存储器部分单元有以下内容：</p>
+<p><img src="https://i.loli.net/2021/05/31/ulF5HqfAeCPinsG.png" srcset="/img/loading.gif"></p>
+<p>指出下列机器指令(十六进制表示)的有效地址。<br>     (1)D7      (2) DF        (3) DE         (4) D2</p>
+<p>解：</p>
+<p>​    (1)  1101 0111 ——  I=0，直接寻址，有效地址为：111B（7H）<br>​    (2) 1101 1111 —— I=1，间接寻址，形式地址为：111B（7H）有效地址为：A0H   </p>
+
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+                    
+                  </div>
                 
               </div>
               
